@@ -111,7 +111,7 @@ export default function PwDDashboard() {
                 </Card>
 
                 {/* AI Recommendations Section */}
-                <Card className="border-none bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-[32px] overflow-hidden shadow-xl">
+                <Card className="border-2 bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-[32px] overflow-hidden shadow-xl">
                     <CardContent className="p-8 space-y-6">
                         <div className="h-12 w-12 bg-white/10 rounded-2xl flex items-center justify-center">
                             <Sparkles className="text-purple-400" />

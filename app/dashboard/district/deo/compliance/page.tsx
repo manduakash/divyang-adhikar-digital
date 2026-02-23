@@ -57,7 +57,7 @@ export default function ComplianceVerificationPage() {
                                         <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-300" />
                                         <Input
                                             placeholder="e.g. Regional Transport Office"
-                                            className="h-14 pl-12 rounded-2xl bg-slate-50 border-none font-bold text-slate-800"
+                                            className="h-14 pl-12 rounded-2xl bg-slate-50 border-2 font-bold text-slate-800"
                                         />
                                     </div>
                                 </div>
@@ -67,7 +67,7 @@ export default function ComplianceVerificationPage() {
                                         <LinkIcon className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-blue-500" />
                                         <Input
                                             placeholder="DIR/LKO/2024/041"
-                                            className="h-14 pl-12 rounded-2xl bg-slate-50 border-none font-mono font-black text-blue-600 text-xs"
+                                            className="h-14 pl-12 rounded-2xl bg-slate-50 border-2 font-mono font-black text-blue-600 text-xs"
                                         />
                                         <Badge className="absolute right-3 top-1/2 -translate-y-1/2 bg-blue-100 text-blue-700 font-black text-[8px]">ACTIVE ORDER</Badge>
                                     </div>
@@ -85,7 +85,7 @@ export default function ComplianceVerificationPage() {
                                         <p className="text-xs text-slate-400 font-medium italic">Establishment uploaded ATR on 18 Oct 2024</p>
                                     </div>
                                 </div>
-                                <Badge className="h-8 px-5 bg-green-100 text-green-700 border-none font-black text-[10px] uppercase">YES - RECEIVED</Badge>
+                                <Badge className="h-8 px-5 bg-green-100 text-green-700 border-2 font-black text-[10px] uppercase">YES - RECEIVED</Badge>
                             </div>
 
                             {/* VERIFICATION DECISION (Binary Select) */}
@@ -121,7 +121,7 @@ export default function ComplianceVerificationPage() {
                                         </button>
                                     </div>
                                     <Textarea
-                                        className="min-h-[160px] rounded-[32px] bg-slate-50 border-none p-6 text-sm font-medium leading-relaxed resize-none focus:ring-2 focus:ring-blue-600"
+                                        className="min-h-[160px] rounded-[32px] bg-slate-50 border-2 p-6 text-sm font-medium leading-relaxed resize-none focus:ring-2 focus:ring-blue-600"
                                         placeholder="Provide reasoning for acceptance or rejection. If rejected, specify which Section 44/45 clauses remain unfulfilled..."
                                     />
                                 </div>
@@ -129,7 +129,7 @@ export default function ComplianceVerificationPage() {
                                     <label className="text-[11px] font-black uppercase text-slate-500 ml-1">5. Verification Date</label>
                                     <div className="relative">
                                         <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-300" />
-                                        <Input type="date" defaultValue="2024-10-20" className="h-14 pl-12 rounded-2xl bg-slate-50 border-none font-bold text-slate-800" />
+                                        <Input type="date" defaultValue="2024-10-20" className="h-14 pl-12 rounded-2xl bg-slate-50 border-2 font-bold text-slate-800" />
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@ export default function ComplianceVerificationPage() {
 
                 {/* SIDEBAR: AUDIT TRAIL & ESTABLISHMENT HEALTH */}
                 <div className="space-y-8 sticky top-28 h-fit">
-                    <Card className="rounded-[40px] border-none bg-slate-900 text-white p-8 shadow-2xl relative overflow-hidden">
+                    <Card className="rounded-[40px] border-2 bg-slate-900 text-white p-8 shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-6 opacity-10"><ClipboardCheck size={100} /></div>
                         <div className="relative z-10 space-y-6">
                             <div className="flex items-center gap-3">

@@ -95,7 +95,7 @@ export default function EstablishmentProfile() {
 
                 {/* RIGHT COLUMN: STATUS & AUDIT */}
                 <div className="space-y-8">
-                    <Card className="rounded-[40px] border-none bg-slate-900 text-white p-8 shadow-2xl">
+                    <Card className="rounded-[40px] border-2 bg-slate-900 text-white p-8 shadow-2xl">
                         <h3 className="text-[10px] font-black text-blue-400 uppercase tracking-[0.2em] mb-8">Statutory Readiness</h3>
                         <div className="space-y-8">
                             <ComplianceItem label="Equal Opportunity Policy" status="Notified & Live" />

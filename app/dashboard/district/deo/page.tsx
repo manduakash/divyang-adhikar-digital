@@ -73,7 +73,7 @@ export default function DEODashboard() {
       {/* ZONE 1: PERFORMANCE SNAPSHOTS (SECTION 8 - Page 42) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* 8.1 TOP 5 COMPLIANT */}
-        <Card className="rounded-[40px] border-none bg-slate-900 text-white shadow-2xl overflow-hidden">
+        <Card className="rounded-[40px] border-2 bg-slate-900 text-white shadow-2xl overflow-hidden">
           <CardHeader className="p-8 border-b border-white/5 bg-white/5 flex flex-row justify-between items-center">
             <div>
               <CardTitle className="text-xs font-black uppercase tracking-[0.2em] text-blue-400 flex items-center gap-2">
@@ -190,7 +190,7 @@ function RankingRow({ name, type, score, rank, issue, isTop, isBottom }: any) {
         <div className="space-y-0.5">
           <div className="flex items-center gap-2">
             <h4 className={`text-sm font-black uppercase tracking-tight ${isTop ? 'text-white' : 'text-slate-800'}`}>{name}</h4>
-            <Badge className={`text-[8px] font-black uppercase tracking-tighter ${isTop ? 'bg-white/10 text-slate-400 border-none' : 'bg-slate-100 text-slate-500'}`}>{type}</Badge>
+            <Badge className={`text-[8px] font-black uppercase tracking-tighter ${isTop ? 'bg-white/10 text-slate-400 border-2' : 'bg-slate-100 text-slate-500'}`}>{type}</Badge>
           </div>
           {issue && (
             <p className="text-[10px] font-bold text-red-500 uppercase flex items-center gap-1">

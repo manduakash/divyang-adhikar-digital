@@ -162,8 +162,8 @@ function ReportLink({ active, onClick, label, icon }: any) {
         <button
             onClick={onClick}
             className={`w-full flex items-center justify-between p-4 rounded-2xl transition-all group ${active
-                    ? 'bg-slate-900 text-white shadow-xl'
-                    : 'bg-white text-slate-500 hover:bg-slate-50 hover:text-slate-900'
+                ? 'bg-slate-900 text-white shadow-xl'
+                : 'bg-white text-slate-500 hover:bg-slate-50 hover:text-slate-900'
                 }`}
         >
             <div className="flex items-center gap-3">
@@ -194,7 +194,7 @@ function StatTable({ headers, children }: any) {
 function Row({ data, status }: any) {
     const statusDot = status === 'success' ? 'bg-green-500' : status === 'warning' ? 'bg-orange-500' : status === 'danger' ? 'bg-red-500' : 'bg-blue-400';
     return (
-        <TableRow className="border-none hover:bg-slate-50/80 group transition-all">
+        <TableRow className="border-2 hover:bg-slate-50/80 group transition-all">
             {data.map((d: string, i: number) => (
                 <TableCell key={i} className="px-8 py-6">
                     <div className="flex items-center gap-3">

@@ -122,7 +122,7 @@ function NewAuditDialog() {
                     <Plus size={16} /> New Accessibility Entry
                 </Button>
             </DialogTrigger>
-            <DialogContent className="max-w-3xl rounded-[40px] p-0 border-none overflow-hidden font-sans">
+            <DialogContent className="max-w-3xl rounded-[40px] p-0 border-2 overflow-hidden font-sans">
                 <DialogHeader className="p-8 bg-slate-900 text-white">
                     <DialogTitle className="text-xl font-black uppercase tracking-tight">Institution Accessibility Audit (4.3)</DialogTitle>
                 </DialogHeader>
@@ -130,7 +130,7 @@ function NewAuditDialog() {
 
                     <div className="space-y-4">
                         <label className="text-[10px] font-black uppercase text-slate-400 ml-1">1. Institution Name</label>
-                        <Input className="h-14 bg-slate-50 border-none rounded-2xl font-bold" placeholder="Enter Registered School Name..." />
+                        <Input className="h-14 bg-slate-50 border-2 rounded-2xl font-bold" placeholder="Enter Registered School Name..." />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -157,12 +157,12 @@ function NewAuditDialog() {
                             <label className="text-[10px] font-black uppercase text-slate-400 ml-1">4. Deficiencies Identified</label>
                             <button className="flex items-center gap-1.5 text-purple-600 font-bold text-[9px] uppercase tracking-wider bg-purple-50 px-2 py-1 rounded-full border border-purple-100"><Sparkles size={10} /> AI Tagging</button>
                         </div>
-                        <Textarea className="min-h-[100px] rounded-2xl bg-slate-50 border-none p-5 text-sm font-medium resize-none" placeholder="Detail identifying gaps (e.g. Ramp slope, Inaccessible UI, No alt text)..." />
+                        <Textarea className="min-h-[100px] rounded-2xl bg-slate-50 border-2 p-5 text-sm font-medium resize-none" placeholder="Detail identifying gaps (e.g. Ramp slope, Inaccessible UI, No alt text)..." />
                     </div>
 
                     <div className="space-y-4">
                         <label className="text-[10px] font-black uppercase text-slate-400 ml-1">5. Corrective Action Directed</label>
-                        <Textarea className="min-h-[100px] rounded-2xl bg-slate-50 border-none p-5 text-sm font-medium resize-none" placeholder="Binding directives issued to the Head of Institution..." />
+                        <Textarea className="min-h-[100px] rounded-2xl bg-slate-50 border-2 p-5 text-sm font-medium resize-none" placeholder="Binding directives issued to the Head of Institution..." />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -170,7 +170,7 @@ function NewAuditDialog() {
                             <label className="text-[10px] font-black uppercase text-slate-400 ml-1">6. Compliance Deadline</label>
                             <div className="relative">
                                 <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-300 pointer-events-none" />
-                                <Input type="date" className="h-14 pl-12 bg-slate-50 border-none rounded-2xl font-bold" />
+                                <Input type="date" className="h-14 pl-12 bg-slate-50 border-2 rounded-2xl font-bold" />
                             </div>
                         </div>
                         <div className="flex flex-col justify-end">
@@ -193,7 +193,7 @@ function AuditRow({ name, physical, digital, deadline, alert, success }: any) {
     };
 
     return (
-        <TableRow className="border-none hover:bg-slate-50 transition-colors group">
+        <TableRow className="border-2 hover:bg-slate-50 transition-colors group">
             <TableCell className="px-8 py-6">
                 <div className="flex items-center gap-3">
                     <Building2 className="text-slate-300" size={18} />

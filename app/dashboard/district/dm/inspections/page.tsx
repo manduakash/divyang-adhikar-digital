@@ -58,10 +58,10 @@ export default function NewInspectionPage() {
                                     <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-300 group-focus-within:text-blue-600 transition-colors" />
                                     <Input
                                         placeholder="Search by Establishment Name or ID..."
-                                        className="h-16 pl-12 rounded-2xl bg-slate-50 border-none font-bold text-slate-800 placeholder:text-slate-400"
+                                        className="h-16 pl-12 rounded-2xl bg-slate-50 border-2 font-bold text-slate-800 placeholder:text-slate-400"
                                     />
                                     <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                                        <Badge className="bg-slate-200 text-slate-600 border-none font-black text-[9px]">REGISTRY LINKED</Badge>
+                                        <Badge className="bg-slate-200 text-slate-600 border-2 font-black text-[9px]">REGISTRY LINKED</Badge>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ export default function NewInspectionPage() {
                                 <div className="space-y-4">
                                     <label className="text-[11px] font-black uppercase text-slate-500 ml-1">2. INSPECTION TRIGGER</label>
                                     <Select>
-                                        <SelectTrigger className="h-14 rounded-2xl bg-slate-50 border-none px-5 font-bold text-slate-700">
+                                        <SelectTrigger className="h-14 rounded-2xl bg-slate-50 border-2 px-5 font-bold text-slate-700">
                                             <SelectValue placeholder="Select Trigger Type" />
                                         </SelectTrigger>
                                         <SelectContent className="rounded-2xl border-slate-200">
@@ -85,7 +85,7 @@ export default function NewInspectionPage() {
                                     <label className="text-[11px] font-black uppercase text-slate-500 ml-1">3. DATE OF INSPECTION</label>
                                     <div className="relative">
                                         <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-300 pointer-events-none" />
-                                        <Input type="date" className="h-14 pl-12 rounded-2xl bg-slate-50 border-none font-bold text-slate-700" />
+                                        <Input type="date" className="h-14 pl-12 rounded-2xl bg-slate-50 border-2 font-bold text-slate-700" />
                                     </div>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@ export default function NewInspectionPage() {
                                     </button>
                                 </div>
                                 <Textarea
-                                    className="min-h-[180px] rounded-[32px] bg-slate-50 border-none p-6 text-sm font-medium leading-relaxed resize-none focus:ring-2 focus:ring-blue-500"
+                                    className="min-h-[180px] rounded-[32px] bg-slate-50 border-2 p-6 text-sm font-medium leading-relaxed resize-none focus:ring-2 focus:ring-blue-500"
                                     placeholder="Detail the physical or digital deficiencies observed during the site visit..."
                                 />
                             </div>
@@ -157,7 +157,7 @@ export default function NewInspectionPage() {
 
                 {/* SIDEBAR: STATUTORY CONTEXT & ALERTS */}
                 <div className="space-y-8 sticky top-28 h-fit">
-                    <Card className="rounded-[40px] border-none bg-slate-900 text-white p-8 shadow-2xl relative overflow-hidden">
+                    <Card className="rounded-[40px] border-2 bg-slate-900 text-white p-8 shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-6 opacity-10"><Gavel size={100} /></div>
                         <div className="relative z-10 space-y-6">
                             <div className="flex items-center gap-3">

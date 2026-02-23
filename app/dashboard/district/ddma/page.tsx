@@ -1,272 +1,286 @@
-// app/dashboard/district/page.tsx
+// app/dashboard/ddma/page.tsx
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
-  Users, Building2, MessageSquare, AlertCircle,
-  CheckCircle2, Gavel, FileWarning, MapPin,
-  GraduationCap, Scale, ArrowUpRight, Sparkles,
-  Download, Filter, ChevronDown, TrendingUp,
-  Activity, Briefcase
+  Map, Siren, Home, Truck, ShieldAlert,
+  Navigation, Activity, AlertTriangle,
+  CheckCircle2, Users, Search, Filter,
+  ArrowUpRight, Zap, Trophy, History,
+  Timer, BarChart3, TrendingUp, Radio
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip,
-  ResponsiveContainer, LineChart, Line, Legend, Cell,
-  ComposedChart, AreaChart, Area
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
+  ResponsiveContainer, BarChart, Bar, Legend, Cell,
+  AreaChart, Area
 } from 'recharts';
+import { Badge } from "@/components/ui/badge";
 
-export default function DistrictDashboard() {
-  const [timeFilter, setTimeFilter] = useState('Month');
+export default function DDMADashboard() {
 
-  // Section 3 Indicators (Re-used)
+  // SECTION 4: 10 INDICATOR BUTTONS (High-Contrast Design)
   const indicators = [
-    { label: "Total PwDs", value: "14,502", icon: Users, color: "text-blue-600", bg: "bg-blue-50" },
-    { label: "Total Establishments", value: "482", icon: Building2, color: "text-slate-600", bg: "bg-slate-100" },
-    { label: "Total Grievances", value: "1,240", icon: MessageSquare, color: "text-purple-600", bg: "bg-purple-50" },
-    { label: "Grievances Pending", value: "84", icon: AlertCircle, color: "text-orange-600", bg: "bg-orange-50", alert: true },
-    { label: "Complied / Closed", value: "1,156", icon: CheckCircle2, color: "text-green-600", bg: "bg-green-50" },
-    { label: "Directions Issued", value: "45", icon: Gavel, color: "text-blue-900", bg: "bg-slate-200" },
-    { label: "Directions Pending", value: "12", icon: FileWarning, color: "text-red-600", bg: "bg-red-50", alert: true },
-    { label: "Access Non-Compliant", value: "32", icon: MapPin, color: "text-red-700", bg: "bg-red-100" },
-    { label: "PwD Vacancy %", value: "4.2%", icon: GraduationCap, color: "text-indigo-600", bg: "bg-indigo-50" },
-    { label: "Prosecution Pending", value: "08", icon: Scale, color: "text-slate-900", bg: "bg-slate-100" },
+    { label: "Total PwDs (Master)", value: "14,502", icon: Users, color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
+    { label: "High-Risk Identified", value: "842", icon: AlertTriangle, color: "text-red-600", bg: "bg-red-50", border: "border-red-100", alert: true },
+    { label: "Mapped to Shelters", value: "12,100", icon: Map, color: "text-indigo-600", bg: "bg-indigo-50", border: "border-indigo-100" },
+    { label: "Accessible Shelters", value: "48", icon: CheckCircle2, color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
+    { label: "Non-Accessible", value: "12", icon: Home, color: "text-slate-600", bg: "bg-slate-50", border: "border-slate-200" },
+    { label: "SOS Received", value: "124", icon: Siren, color: "text-orange-600", bg: "bg-orange-50", border: "border-orange-100" },
+    { label: "Requests Responded", value: "110", icon: Zap, color: "text-green-600", bg: "bg-green-50", border: "border-green-100" },
+    { label: "Requests Pending", value: "14", icon: Timer, color: "text-amber-600", bg: "bg-amber-50", border: "border-amber-100", alert: true },
+    { label: "Resource Gaps", value: "08", icon: History, color: "text-purple-600", bg: "bg-purple-50", border: "border-purple-100" },
+    { label: "Active Disasters", value: "02", icon: ShieldAlert, color: "text-rose-600", bg: "bg-rose-50", border: "border-rose-100", alert: true },
   ];
 
   return (
-    <div className="space-y-10 animate-in fade-in duration-700 pb-20 max-w-[1600px] mx-auto">
+    <div className="space-y-10 animate-in fade-in duration-700 pb-20 font-sans">
 
-      {/* HEADER SECTION */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-        <div>
-          <h1 className="text-4xl font-black text-slate-900 tracking-tight leading-none uppercase">District Statutory Control</h1>
-          <p className="text-slate-500 font-medium mt-3 text-lg italic underline underline-offset-8 decoration-slate-200">Lucknow Jurisdiction • PwD Act Enforcement Console</p>
+      {/* 1. EMERGENCY COMMAND HEADER */}
+      <div className="flex flex-col xl:flex-row justify-between items-start xl:items-end gap-6 bg-white p-10 rounded-[40px] border border-slate-200 shadow-sm relative overflow-hidden">
+        <div className="absolute top-0 right-0 p-10 opacity-[0.03] pointer-events-none">
+          <Radio size={180} className="text-orange-600" />
         </div>
-        <div className="flex gap-3">
-          <Button variant="outline" className="h-12 px-6 rounded-2xl border-slate-200 font-bold gap-2 bg-white">
-            <Filter size={16} /> Global Parameters
+        <div className="space-y-2 relative z-10">
+          <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-1.5 rounded-full text-[10px] font-black uppercase tracking-widest border border-orange-200">
+            <Activity size={14} className="animate-pulse" /> Unified Disaster Node: Kolkata
+          </div>
+          <h1 className="text-5xl font-black text-slate-900 tracking-tighter uppercase leading-none">DDMA Dashboard</h1>
+          <p className="text-slate-500 font-medium text-lg italic">Real-time PwD Disaster Mapping, Response & Recovery oversight.</p>
+        </div>
+        <div className="flex gap-4 relative z-10">
+          <Button variant="outline" className="h-16 px-8 rounded-2xl border-slate-200 font-bold bg-white hover:bg-slate-50 gap-2 shadow-sm">
+            <Navigation size={20} className="text-blue-600" /> Live Shelter GIS
           </Button>
         </div>
       </div>
 
-      {/* SECTION 3: 10 ACTION BUTTONS */}
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+      {/* 2. SECTION 4: 10 ACTION INDICATORS (High Contrast) */}
+      <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
         {indicators.map((item, i) => (
-          <button key={i} className={`group text-left p-6 rounded-[32px] border border-slate-100 bg-white hover:shadow-2xl transition-all duration-500 relative overflow-hidden flex flex-col justify-between h-44 ${item.alert ? 'ring-2 ring-red-50' : ''}`}>
-            <div className={`h-12 w-12 rounded-2xl ${item.bg} flex items-center justify-center ${item.color} group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
+          <button
+            key={i}
+            className={`group text-left p-6 rounded-[32px] border ${item.border} ${item.bg} hover:shadow-xl transition-all duration-500 h-44 flex flex-col justify-between relative overflow-hidden`}
+          >
+            <div className={`h-12 w-12 rounded-2xl bg-white flex items-center justify-center ${item.color} shadow-sm group-hover:scale-110 transition-transform`}>
               <item.icon size={24} />
             </div>
             <div>
               <p className="text-3xl font-black text-slate-900 tracking-tighter">{item.value}</p>
-              <p className="text-[9px] font-black uppercase text-slate-400 tracking-[0.1em] leading-tight mt-1 group-hover:text-blue-600 transition-colors">{item.label}</p>
+              <p className="text-[10px] font-black uppercase text-slate-500 tracking-widest leading-tight mt-1 group-hover:text-slate-900 transition-colors">
+                {item.label}
+              </p>
             </div>
-            <ArrowUpRight size={14} className="absolute top-6 right-6 text-slate-200 group-hover:text-blue-500 transition-colors" />
+            {item.alert && (
+              <div className="absolute top-6 right-6 h-2 w-2 rounded-full bg-red-500 animate-ping" />
+            )}
+            <ArrowUpRight className="absolute bottom-6 right-6 text-slate-300 opacity-0 group-hover:opacity-100 transition-all" size={18} />
           </button>
         ))}
       </div>
 
-      {/* ZONE 1: ECONOMIC INCLUSION OVERSIGHT ( & ) */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <ChartCard
-          title=" Employment Trend (%)"
-          desc="Monitor compliance trajectory across sectors."
-          filters={['All', 'Govt', 'Private']}
-        >
-          <ResponsiveContainer width="100%" height={300}>
-            <AreaChart data={employmentTrendData}>
-              <defs>
-                <linearGradient id="colorPerc" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#2563eb" stopOpacity={0.1} />
-                  <stop offset="95%" stopColor="#2563eb" stopOpacity={0} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-              <XAxis dataKey="time" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 'bold' }} />
-              <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 'bold' }} domain={[0, 5]} />
-              <Tooltip contentStyle={{ borderRadius: '16px', border: 'none', boxShadow: '0 10px 15px -3px rgba(0,0,0,0.1)' }} />
-              <Area type="monotone" dataKey="percentage" stroke="#2563eb" strokeWidth={4} fillOpacity={1} fill="url(#colorPerc)" />
-              <Line type="monotone" dataKey="mandate" stroke="#ef4444" strokeDasharray="5 5" strokeWidth={2} name="4% Mandate" />
-            </AreaChart>
-          </ResponsiveContainer>
-        </ChartCard>
+      {/* 3. SECTION 7: DETAILED GRAPHS & CHARTS (Expanded Spacing) */}
+      <div className="grid grid-cols-1 gap-8">
 
-        <ChartCard
-          title=" Vacancy Fulfillment"
-          desc="Identifying the gap between mandated vs actual."
-        >
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={vacancyFulfillmentData}>
+        {/*  EMERGENCY REQUEST TREND (Large View) */}
+        <ChartCard title=" Emergency Request Lifecycle Trend" desc="X-Axis: Timeline • Y-Axis: SOS Count">
+          <ResponsiveContainer width="100%" height={400}>
+            <LineChart data={sosTrendData} margin={{ top: 20, right: 30, left: 20, bottom: 20 }}>
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-              <XAxis dataKey="category" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 'bold' }} />
-              <YAxis axisLine={false} tickLine={false} />
-              <Tooltip cursor={{ fill: '#f8fafc' }} />
-              <Legend iconType="circle" wrapperStyle={{ paddingTop: '20px', fontSize: '10px', fontWeight: 'black', textTransform: 'uppercase' }} />
-              <Bar dataKey="identified" fill="#2563eb" radius={[6, 6, 0, 0]} barSize={30} name="Identified" />
-              <Bar dataKey="filled" fill="#10b981" radius={[6, 6, 0, 0]} barSize={30} name="Filled" />
-              <Bar dataKey="vacant" fill="#ef4444" radius={[6, 6, 0, 0]} barSize={30} name="Vacant" />
-            </BarChart>
-          </ResponsiveContainer>
-        </ChartCard>
-      </div>
-
-      {/* ZONE 2: INFRASTRUCTURE & REDRESSAL ( & ) */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <ChartCard
-          title=" Accessibility Compliance"
-          desc="Physical vs Digital audit status across district."
-        >
-          <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={accessibilityStatusData} layout="vertical">
-              <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="#f1f5f9" />
-              <XAxis type="number" hide />
-              <YAxis dataKey="type" type="category" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 'black' }} width={100} />
-              <Tooltip cursor={{ fill: 'transparent' }} />
-              <Bar dataKey="compliant" stackId="a" fill="#10b981" barSize={40} />
-              <Bar dataKey="partial" stackId="a" fill="#f59e0b" />
-              <Bar dataKey="non" stackId="a" fill="#ef4444" radius={[0, 10, 10, 0]} />
-            </BarChart>
-          </ResponsiveContainer>
-        </ChartCard>
-
-        <ChartCard
-          title=" Grievance Pendency Trend"
-          desc="District-level disposal efficiency tracking."
-        >
-          <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={grievanceTrendData}>
-              <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-              <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 'bold' }} />
-              <Tooltip />
-              <Line type="stepAfter" dataKey="received" stroke="#2563eb" strokeWidth={3} dot={{ r: 4 }} />
-              <Line type="stepAfter" dataKey="disposed" stroke="#10b981" strokeWidth={3} dot={{ r: 4 }} />
-              <Line type="stepAfter" dataKey="pending" stroke="#f43f5e" strokeWidth={3} dot={{ r: 4 }} />
-              <Legend iconType="square" wrapperStyle={{ fontSize: '10px', fontWeight: 'black', textTransform: 'uppercase' }} />
+              <XAxis dataKey="day" axisLine={false} tickLine={false} tick={{ fontSize: 11, fontWeight: 'bold' }} />
+              <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 11, fontWeight: 'bold' }} />
+              <Tooltip contentStyle={{ borderRadius: '24px', border: 'none', boxShadow: '0 20px 25px -5px rgba(0,0,0,0.1)' }} />
+              <Legend verticalAlign="top" align="right" iconType="circle" wrapperStyle={{ paddingBottom: '40px', fontSize: '11px', fontWeight: 'black', textTransform: 'uppercase' }} />
+              <Line type="monotone" name="Received" dataKey="received" stroke="#f43f5e" strokeWidth={5} dot={{ r: 6 }} />
+              <Line type="monotone" name="Responded" dataKey="responded" stroke="#10b981" strokeWidth={5} dot={{ r: 6 }} />
+              <Line type="monotone" name="Pending" dataKey="pending" stroke="#f59e0b" strokeWidth={5} strokeDasharray="8 8" />
             </LineChart>
           </ResponsiveContainer>
         </ChartCard>
-      </div>
 
-      {/* ZONE 3: LEGAL & REGIONAL ( & ) */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2">
-          <ChartCard
-            title=" Prosecution Case Progress"
-            desc="Stagnation monitoring for PwD-related trials."
-          >
-            <ResponsiveContainer width="100%" height={300}>
-              <LineChart data={prosecutionData}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/*  MAPPING COVERAGE */}
+          <ChartCard title=" Block-wise Mapping Coverage" desc="Status of PwD tagging per district sub-unit.">
+            <ResponsiveContainer width="100%" height={350}>
+              <BarChart data={mappingData}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
-                <XAxis dataKey="month" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 'bold' }} />
-                <YAxis axisLine={false} tickLine={false} />
-                <Tooltip />
-                <Line type="monotone" dataKey="new" stroke="#2563eb" strokeWidth={3} />
-                <Line type="monotone" dataKey="disposed" stroke="#10b981" strokeWidth={3} />
-                <Line type="monotone" dataKey="pending" stroke="#f43f5e" strokeWidth={5} />
-              </LineChart>
+                <XAxis dataKey="block" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 'black' }} />
+                <Tooltip cursor={{ fill: '#f8fafc' }} />
+                <Bar dataKey="mapped" fill="#4f46e5" radius={[12, 12, 0, 0]} barSize={50} />
+              </BarChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          {/*  SHELTER ACCESSIBILITY */}
+          <ChartCard title=" Shelter Accessibility Status" desc="By Block (Accessible vs Non-Accessible stacks)">
+            <ResponsiveContainer width="100%" height={350}>
+              <BarChart data={shelterStatusData}>
+                <XAxis dataKey="block" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 'black' }} />
+                <Tooltip cursor={{ fill: '#f8fafc' }} />
+                <Bar dataKey="accessible" stackId="a" fill="#10b981" barSize={50} />
+                <Bar dataKey="inaccessible" stackId="a" fill="#ef4444" radius={[12, 12, 0, 0]} barSize={50} />
+              </BarChart>
             </ResponsiveContainer>
           </ChartCard>
         </div>
 
-        <Card className="rounded-[40px] border-slate-200 bg-white p-8 shadow-sm">
-          <CardHeader className="p-0 mb-6">
-            <CardTitle className="text-[10px] font-black uppercase tracking-widest text-slate-400"> District Compliance Heat Map</CardTitle>
-            <p className="text-xs font-bold text-slate-900 mt-1">Problem Area Identification (By Block)</p>
-          </CardHeader>
-          <div className="space-y-4">
-            <HeatMapRow label="Bakshi Ka Talab" employment="green" access="green" grievance="amber" />
-            <HeatMapRow label="Chinhat" employment="amber" access="red" grievance="green" />
-            <HeatMapRow label="Malihabad" employment="green" access="amber" grievance="red" />
-            <HeatMapRow label="Sarojini Nagar" employment="red" access="red" grievance="red" />
-            <HeatMapRow label="Gosainganj" employment="green" access="green" grievance="green" />
-          </div>
-          <div className="mt-8 flex justify-between items-center text-[8px] font-black uppercase tracking-widest text-slate-400">
-            <span className="flex items-center gap-1"><div className="h-2 w-2 rounded-full bg-green-500" /> Compliant</span>
-            <span className="flex items-center gap-1"><div className="h-2 w-2 rounded-full bg-orange-400" /> Partial</span>
-            <span className="flex items-center gap-1"><div className="h-2 w-2 rounded-full bg-red-500" /> Critical</span>
-          </div>
-        </Card>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/*  RESPONSE TIME ANALYSIS */}
+          <ChartCard title=" Avg Response Time Analysis" desc="Minutes elapsed from SOS to Evacuation.">
+            <ResponsiveContainer width="100%" height={350}>
+              <AreaChart data={responseTimeData}>
+                <defs>
+                  <linearGradient id="colorTime" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#f97316" stopOpacity={0.2} />
+                    <stop offset="95%" stopColor="#f97316" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
+                <XAxis dataKey="request" hide />
+                <YAxis axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 'bold' }} />
+                <Tooltip />
+                <Area type="monotone" dataKey="minutes" stroke="#f97316" strokeWidth={5} fillOpacity={1} fill="url(#colorTime)" />
+              </AreaChart>
+            </ResponsiveContainer>
+          </ChartCard>
+
+          {/*  RESOURCE GAP MONITORING */}
+          <ChartCard title=" Resource Availability" desc="Critical Supplies: Available vs Mandated.">
+            <ResponsiveContainer width="100%" height={350}>
+              <BarChart data={resourceData} layout="vertical" margin={{ left: 40 }}>
+                <XAxis type="number" hide />
+                <YAxis dataKey="type" type="category" axisLine={false} tickLine={false} tick={{ fontSize: 10, fontWeight: 'black' }} width={120} />
+                <Tooltip />
+                <Bar dataKey="available" fill="#2563eb" barSize={15} radius={[0, 10, 10, 0]} />
+                <Bar dataKey="required" fill="#e2e8f0" barSize={15} radius={[0, 10, 10, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </ChartCard>
+        </div>
       </div>
+
+      {/* 4. SECTION 8: TOP 5 / BOTTOM 5 PERFORMANCE (Full Data) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <RankingBox title="Top Prepared Blocks" data={topBlocks} color="text-green-600" icon={<Trophy />} />
+        <RankingBox title="Critical Need Blocks" data={bottomBlocks} color="text-red-600" icon={<AlertTriangle />} isDanger />
+        <RankingBox title="Most Accessible Shelters" data={topShelters} color="text-blue-600" icon={<Home />} />
+        <RankingBox title="Primary Shelter Gaps" data={bottomShelters} color="text-orange-600" icon={<ShieldAlert />} isDanger />
+      </div>
+
     </div>
   );
 }
 
 /* UI SUB-COMPONENTS */
 
-function ChartCard({ title, desc, children, filters }: any) {
+function ChartCard({ title, desc, children }: any) {
   return (
     <Card className="rounded-[40px] border-slate-200 bg-white shadow-sm overflow-hidden">
-      <CardHeader className="p-8 flex flex-row justify-between items-start border-b border-slate-50 mb-6">
+      <CardHeader className="p-8 border-b border-slate-50 mb-6 flex flex-row justify-between items-start">
         <div className="space-y-1">
-          <CardTitle className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-600">{title}</CardTitle>
-          <p className="text-sm font-bold text-slate-900">{desc}</p>
+          <CardTitle className="text-[11px] font-black uppercase tracking-[0.25em] text-orange-600">{title}</CardTitle>
+          <p className="text-lg font-black text-slate-900">{desc}</p>
         </div>
-        {filters && (
-          <div className="flex gap-1 bg-slate-50 p-1 rounded-xl">
-            {filters.map((f: string) => (
-              <button key={f} className="px-3 py-1 text-[8px] font-black uppercase rounded-lg hover:bg-white hover:shadow-sm transition-all text-slate-400 hover:text-slate-900">{f}</button>
-            ))}
-          </div>
-        )}
+        <div className="flex gap-2">
+          <Button variant="ghost" size="icon" className="h-10 w-10 rounded-xl text-slate-300 hover:text-slate-900 transition-colors"><Filter size={18} /></Button>
+          <Button variant="ghost" size="icon" className="h-10 w-10 rounded-xl text-slate-300 hover:text-slate-900 transition-colors"><ArrowUpRight size={18} /></Button>
+        </div>
       </CardHeader>
-      <CardContent className="px-8 pb-8">
+      <CardContent className="px-8 pb-10">
         {children}
       </CardContent>
     </Card>
   )
 }
 
-function HeatMapRow({ label, employment, access, grievance }: any) {
-  const getColor = (status: string) => {
-    if (status === 'green') return 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.3)]';
-    if (status === 'amber') return 'bg-orange-400 shadow-[0_0_10px_rgba(251,146,60,0.3)]';
-    return 'bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.3)] animate-pulse';
-  }
+function RankingBox({ title, data, color, icon, isDanger }: any) {
   return (
-    <div className="flex items-center justify-between p-3 bg-slate-50 rounded-2xl group hover:bg-slate-100 transition-all">
-      <span className="text-[10px] font-black text-slate-700 uppercase tracking-tight w-24">{label}</span>
-      <div className="flex gap-3">
-        <div title="Employment" className={`h-6 w-10 rounded-lg ${getColor(employment)}`} />
-        <div title="Accessibility" className={`h-6 w-10 rounded-lg ${getColor(access)}`} />
-        <div title="Grievances" className={`h-6 w-10 rounded-lg ${getColor(grievance)}`} />
+    <Card className={`rounded-[40px] border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col h-full`}>
+      <div className={`p-6 border-b border-slate-50 flex items-center gap-3 ${isDanger ? 'bg-rose-50/50' : 'bg-slate-50/50'}`}>
+        <div className={`${color}`}>{React.cloneElement(icon, { size: 20 })}</div>
+        <h3 className={`text-[10px] font-black uppercase tracking-[0.2em] ${color}`}>{title}</h3>
       </div>
-    </div>
+      <div className="px-6 flex-1 space-y-2">
+        {data.map((item: any, i: number) => (
+          <div key={i} className="flex justify-between items-start group cursor-pointer border-b border-slate-50 pb-2 last:border-0">
+            <div className="space-y-1">
+              <p className="text-sm font-black text-slate-800 uppercase tracking-tight group-hover:text-blue-600 transition-colors leading-none">{item.name}</p>
+              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">{item.sub || item.deficiency}</p>
+            </div>
+            <div className="text-right">
+              <span className={`text-xs font-black ${isDanger ? 'text-red-500' : 'text-slate-900'}`}>{item.score}</span>
+              {item.rank && <p className="text-[8px] font-black text-slate-300 uppercase">Rank {item.rank}</p>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </Card>
   )
 }
 
-/* MOCK DATA SETS */
+/* MOCK DATA SETS (Expanded for 5 items) */
 
-const employmentTrendData = [
-  { time: 'Q1 23', percentage: 3.2, mandate: 4 },
-  { time: 'Q2 23', percentage: 3.5, mandate: 4 },
-  { time: 'Q3 23', percentage: 3.4, mandate: 4 },
-  { time: 'Q4 23', percentage: 3.8, mandate: 4 },
-  { time: 'Q1 24', percentage: 4.1, mandate: 4 },
-  { time: 'Q2 24', percentage: 4.2, mandate: 4 },
+const mappingData = [
+  { block: 'MALIBAD', mapped: 1200 }, { block: 'CHINHAT', mapped: 2100 },
+  { block: 'BAKSHI TALAB', mapped: 1850 }, { block: 'GOSAINGANJ', mapped: 940 },
+  { block: 'KAKORI', mapped: 1100 },
 ];
 
-const vacancyFulfillmentData = [
-  { category: 'Health', identified: 450, filled: 300, vacant: 150 },
-  { category: 'Education', identified: 600, filled: 520, vacant: 80 },
-  { category: 'Transport', identified: 200, filled: 110, vacant: 90 },
-  { category: 'Revenue', identified: 350, filled: 340, vacant: 10 },
+const sosTrendData = [
+  { day: '01 Oct', received: 12, responded: 10, pending: 2 },
+  { day: '04 Oct', received: 45, responded: 30, pending: 15 },
+  { day: '08 Oct', received: 28, responded: 28, pending: 0 },
+  { day: '12 Oct', received: 84, responded: 40, pending: 44 },
+  { day: '15 Oct', received: 124, responded: 110, pending: 14 },
 ];
 
-const accessibilityStatusData = [
-  { type: 'Physical', compliant: 342, partial: 108, non: 32 },
-  { type: 'Digital', compliant: 210, partial: 150, non: 122 },
+const shelterStatusData = [
+  { block: 'URBAN', accessible: 24, inaccessible: 4 },
+  { block: 'RURAL', accessible: 12, inaccessible: 8 },
+  { block: 'ZONE A', accessible: 18, inaccessible: 2 },
+  { block: 'ZONE B', accessible: 14, inaccessible: 6 },
 ];
 
-const grievanceTrendData = [
-  { month: 'Jul', received: 120, disposed: 90, pending: 30 },
-  { month: 'Aug', received: 150, disposed: 110, pending: 40 },
-  { month: 'Sep', received: 180, disposed: 140, pending: 40 },
-  { month: 'Oct', received: 240, disposed: 180, pending: 60 },
+const responseTimeData = [
+  { request: 1, minutes: 12 }, { request: 2, minutes: 45 }, { request: 3, minutes: 22 },
+  { request: 4, minutes: 18 }, { request: 5, minutes: 55 }, { request: 6, minutes: 30 },
 ];
 
-const prosecutionData = [
-  { month: 'Jul', new: 4, disposed: 2, pending: 18 },
-  { month: 'Aug', new: 2, disposed: 1, pending: 19 },
-  { month: 'Sep', new: 6, disposed: 4, pending: 21 },
-  { month: 'Oct', new: 5, disposed: 2, pending: 24 },
+const resourceData = [
+  { type: 'Wheelchairs', available: 450, required: 600 },
+  { type: 'Medical Kits', available: 800, required: 800 },
+  { type: 'Evac Vans', available: 12, required: 20 },
+  { type: 'Stretchers', available: 100, required: 150 },
+  { type: 'Batteries', available: 40, required: 40 },
+];
+
+const topBlocks = [
+  { name: 'CHINHAT', sub: '98% Mapped', score: '94%', rank: 1 },
+  { name: 'BAKSHI TALAB', sub: '92% Mapped', score: '91%', rank: 2 },
+  { name: 'GOSAINGANJ', sub: '88% Mapped', score: '89%', rank: 3 },
+  { name: 'URBAN HUB', sub: '95% Mapped', score: '88%', rank: 4 },
+  { name: 'SAROJINI NGR', sub: '85% Mapped', score: '86%', rank: 5 },
+];
+
+const bottomBlocks = [
+  { name: 'MALIBAD', deficiency: 'Low Shelter Access', score: '42%' },
+  { name: 'KAKORI', deficiency: 'Delayed Response', score: '48%' },
+  { name: 'RURAL ZONE 4', deficiency: 'No Scribes Mapped', score: '51%' },
+  { name: 'B-PURA BLOCK', deficiency: 'High Risk Unmapped', score: '54%' },
+  { name: 'WEST SECTOR', deficiency: 'Resource Gap', score: '58%' },
+];
+
+const topShelters = [
+  { name: 'COMMUNITY HUB A', sub: 'CHINHAT', score: '98%' },
+  { name: 'DISTRICT STADIUM', sub: 'URBAN', score: '95%' },
+  { name: 'GIC COLLEGE HALL', sub: 'BAKSHI TALAB', score: '92%' },
+  { name: 'RAILWAY ANNEX', sub: 'ZONE A', score: '90%' },
+  { name: 'PRIMARY HUB-C', sub: 'GOSAINGANJ', score: '89%' },
+];
+
+const bottomShelters = [
+  { name: 'PRIMARY SCHOOL B', sub: 'RURAL', deficiency: 'Ramp Deficit' },
+  { name: 'OLD TOWN LIBRARY', sub: 'MALIBAD', deficiency: 'No Power Backup' },
+  { name: 'VILLAGE CENTRE 1', sub: 'KAKORI', deficiency: 'Inaccessible Washroom' },
+  { name: 'TEMP CAMP 4', sub: 'ZONE B', deficiency: 'No Medical Kit' },
+  { name: 'BLOCK OFFICE D', sub: 'WEST', deficiency: 'High Flooding Risk' },
 ];

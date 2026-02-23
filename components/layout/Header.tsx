@@ -3,9 +3,9 @@
 import { Bell, Search, Sparkles, User, MapPin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { 
-  DropdownMenu, DropdownMenuContent, DropdownMenuItem, 
-  DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger 
+import {
+  DropdownMenu, DropdownMenuContent, DropdownMenuItem,
+  DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 
 export default function Header({ role }: { role: string }) {
@@ -14,9 +14,9 @@ export default function Header({ role }: { role: string }) {
       <div className="flex items-center gap-4 w-1/3">
         <div className="relative w-full max-w-sm">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-slate-400" />
-          <Input 
-            placeholder="Search PwD ID, Case No, or Establishment..." 
-            className="pl-9 bg-slate-50 border-none focus-visible:ring-1"
+          <Input
+            placeholder="Search PwD ID, Case No, or Establishment..."
+            className="pl-9 bg-slate-50 border-2 focus-visible:ring-1"
           />
         </div>
       </div>

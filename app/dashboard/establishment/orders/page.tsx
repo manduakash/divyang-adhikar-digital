@@ -90,7 +90,7 @@ export default function DirectionsOrdersPage() {
 
                 {/* 3. COMPLIANCE SUBMISSION PANEL (Section 10 Button 8 Logic) */}
                 <div className="space-y-6">
-                    <Card className="rounded-[40px] border-none bg-slate-900 text-white p-8 shadow-2xl">
+                    <Card className="rounded-[40px] border-2 bg-slate-900 text-white p-8 shadow-2xl">
                         <div className="flex items-center gap-3 mb-6">
                             <ShieldAlert className="text-blue-400" />
                             <h3 className="text-sm font-black uppercase tracking-widest">Enforcement Notice</h3>

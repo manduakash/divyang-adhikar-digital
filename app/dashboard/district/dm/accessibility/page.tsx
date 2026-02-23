@@ -108,7 +108,7 @@ export default function AccessibilityCompliancePage() {
 
             {/* 3. ENFORCEMENT CALLOUT */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <Card className="rounded-[40px] border-none bg-slate-900 text-white p-10 shadow-2xl relative overflow-hidden">
+                <Card className="rounded-[40px] border-2 bg-slate-900 text-white p-10 shadow-2xl relative overflow-hidden">
                     <div className="absolute top-0 right-0 p-8 opacity-10"><ShieldCheck size={120} /></div>
                     <div className="relative z-10 space-y-6">
                         <h3 className="text-2xl font-black tracking-tight uppercase">Bulk Approval Cycle</h3>
@@ -147,7 +147,7 @@ function ComplianceRow({ name, physical, digital, lastDate, status, alert }: any
     };
 
     return (
-        <TableRow className="border-none hover:bg-slate-50/80 group transition-all">
+        <TableRow className="border-2 hover:bg-slate-50/80 group transition-all">
             <TableCell className="px-8 py-6">
                 <div className="flex items-center gap-3">
                     <Building2 className="text-slate-300" size={18} />
@@ -170,7 +170,7 @@ function ComplianceRow({ name, physical, digital, lastDate, status, alert }: any
                 <span className="text-xs font-bold text-slate-400 font-mono">{lastDate}</span>
             </TableCell>
             <TableCell>
-                <Badge className={`rounded-full px-3 py-1 text-[9px] font-black uppercase border-none shadow-none ${getStatusStyle(status)}`}>
+                <Badge className={`rounded-full px-3 py-1 text-[9px] font-black uppercase border-2 shadow-none ${getStatusStyle(status)}`}>
                     {status}
                 </Badge>
             </TableCell>

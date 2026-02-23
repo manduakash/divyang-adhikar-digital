@@ -58,10 +58,10 @@ export default function NewEducationalInspectionPage() {
                                     <School className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-300 group-focus-within:text-indigo-600 transition-colors" />
                                     <Input
                                         placeholder="Search by Registered School Name or School-ID..."
-                                        className="h-16 pl-12 rounded-2xl bg-slate-50 border-none font-bold text-slate-800"
+                                        className="h-16 pl-12 rounded-2xl bg-slate-50 border-2 font-bold text-slate-800"
                                     />
                                     <div className="absolute right-4 top-1/2 -translate-y-1/2">
-                                        <Badge className="bg-indigo-50 text-indigo-700 border-none font-black text-[9px] uppercase tracking-tighter">Verified School Registry</Badge>
+                                        <Badge className="bg-indigo-50 text-indigo-700 border-2 font-black text-[9px] uppercase tracking-tighter">Verified School Registry</Badge>
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ export default function NewEducationalInspectionPage() {
                                 <div className="space-y-4">
                                     <label className="text-[11px] font-black uppercase text-slate-500 ml-1 tracking-widest">2. Inspection Type</label>
                                     <Select>
-                                        <SelectTrigger className="h-14 rounded-2xl bg-slate-50 border-none px-5 font-bold text-slate-700">
+                                        <SelectTrigger className="h-14 rounded-2xl bg-slate-50 border-2 px-5 font-bold text-slate-700">
                                             <SelectValue placeholder="Routine / Complaint" />
                                         </SelectTrigger>
                                         <SelectContent className="rounded-2xl border-slate-200">
@@ -84,7 +84,7 @@ export default function NewEducationalInspectionPage() {
                                     <label className="text-[11px] font-black uppercase text-slate-500 ml-1 tracking-widest">3. Inspection Date</label>
                                     <div className="relative">
                                         <Calendar className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-300 pointer-events-none" />
-                                        <Input type="date" className="h-14 pl-12 rounded-2xl bg-slate-50 border-none font-bold text-slate-700" />
+                                        <Input type="date" className="h-14 pl-12 rounded-2xl bg-slate-50 border-2 font-bold text-slate-700" />
                                     </div>
                                 </div>
                             </div>
@@ -98,7 +98,7 @@ export default function NewEducationalInspectionPage() {
                                     </button>
                                 </div>
                                 <Textarea
-                                    className="min-h-[180px] rounded-[32px] bg-slate-50 border-none p-8 text-sm font-medium leading-relaxed resize-none focus:ring-2 focus:ring-indigo-600"
+                                    className="min-h-[180px] rounded-[32px] bg-slate-50 border-2 p-8 text-sm font-medium leading-relaxed resize-none focus:ring-2 focus:ring-indigo-600"
                                     placeholder="Record structural, academic, or accommodation deficiencies. Mention specific violations of Sections 16, 17, or 18..."
                                 />
                             </div>
@@ -157,7 +157,7 @@ export default function NewEducationalInspectionPage() {
 
                 {/* SIDEBAR: DEO ENFORCEMENT POWER */}
                 <div className="space-y-8 sticky top-28 h-fit">
-                    <Card className="rounded-[40px] border-none bg-slate-900 text-white p-8 shadow-2xl relative overflow-hidden">
+                    <Card className="rounded-[40px] border-2 bg-slate-900 text-white p-8 shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-6 opacity-10"><Gavel size={100} /></div>
                         <div className="relative z-10 space-y-6">
                             <div className="flex items-center gap-3">

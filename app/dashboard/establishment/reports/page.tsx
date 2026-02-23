@@ -347,7 +347,7 @@ function TableSkeleton({ headers, children }: any) {
 function DataRow({ data, status }: any) {
     const statusDot = status === 'success' ? 'bg-green-500' : status === 'warning' ? 'bg-orange-500' : status === 'danger' ? 'bg-red-500' : 'bg-slate-300';
     return (
-        <TableRow className="border-none hover:bg-slate-50 transition-colors">
+        <TableRow className="border-2 hover:bg-slate-50 transition-colors">
             {data.map((d: string, i: number) => (
                 <TableCell key={i} className="px-8 py-5">
                     <div className="flex items-center gap-3">

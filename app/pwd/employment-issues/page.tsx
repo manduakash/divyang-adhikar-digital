@@ -84,14 +84,14 @@ export default function InclusionIssuesPage() {
                                 </label>
                                 <div className="relative">
                                     <Building2 className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-                                    <Input className="pl-10 h-11 bg-slate-50 border-none rounded-xl" placeholder="Search or enter name..." />
+                                    <Input className="pl-10 h-11 bg-slate-50 border-2 rounded-xl" placeholder="Search or enter name..." />
                                 </div>
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-[10px] font-black uppercase text-slate-500 ml-1">Nature of Issue</label>
                                 <Select>
-                                    <SelectTrigger className="rounded-xl h-11 bg-slate-50 border-none px-4">
+                                    <SelectTrigger className="rounded-xl h-11 bg-slate-50 border-2 px-4">
                                         <SelectValue placeholder="Select Category" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -114,7 +114,7 @@ export default function InclusionIssuesPage() {
 
                             <div className="space-y-2">
                                 <label className="text-[10px] font-black uppercase text-slate-500 ml-1">Description</label>
-                                <Textarea className="min-h-[100px] rounded-xl bg-slate-50 border-none p-3 resize-none text-sm" placeholder="Briefly describe the incident..." />
+                                <Textarea className="min-h-[100px] rounded-xl bg-slate-50 border-2 p-3 resize-none text-sm" placeholder="Briefly describe the incident..." />
                             </div>
 
                             <div className="space-y-2">
@@ -150,7 +150,7 @@ export default function InclusionIssuesPage() {
                             <CardTitle className="text-sm font-black text-slate-800 uppercase tracking-tight">Active {activeTab.toLowerCase()} Filings</CardTitle>
                             <div className="relative">
                                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-slate-400" />
-                                <input className="pl-9 pr-4 py-1.5 bg-slate-50 border-none rounded-lg text-[10px] font-bold outline-none" placeholder="Search Filings..." />
+                                <input className="pl-9 pr-4 py-1.5 bg-slate-50 border-2 rounded-lg text-[10px] font-bold outline-none" placeholder="Search Filings..." />
                             </div>
                         </CardHeader>
                         <CardContent className="p-0">
@@ -230,7 +230,7 @@ function StatusBadge({ status }: { status: string }) {
     };
 
     return (
-        <Badge className={`rounded-full px-3 py-0.5 text-[9px] font-black uppercase tracking-tighter border-none shadow-none ${variants[status] || "bg-slate-100 text-slate-600"}`}>
+        <Badge className={`rounded-full px-3 py-0.5 text-[9px] font-black uppercase tracking-tighter border-2 shadow-none ${variants[status] || "bg-slate-100 text-slate-600"}`}>
             {status}
         </Badge>
     );

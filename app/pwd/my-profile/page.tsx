@@ -77,7 +77,7 @@ export default function MyProfilePage() {
                                 <Field label="Date of Birth" type="date" />
                                 <div className="space-y-2 relative">
                                     <Field label="Mobile Number" placeholder="+91 00000 00000" />
-                                    <Badge className="absolute right-3 bottom-5 bg-green-100 text-green-700 hover:bg-green-100 border-none font-bold text-[10px]"><BadgeCheck /> Verified</Badge>
+                                    <Badge className="absolute right-3 bottom-5 bg-green-100 text-green-700 hover:bg-green-100 border-2 font-bold text-[10px]"><BadgeCheck /> Verified</Badge>
                                 </div>
                                 <Field label="Email ID" type="email" placeholder="example@email.com" />
                             </div>

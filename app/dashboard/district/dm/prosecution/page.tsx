@@ -149,7 +149,7 @@ export default function ProsecutionStatusPage() {
             </div>
 
             {/* 5. LEGAL ACTION CALLOUT */}
-            <Card className="rounded-[40px] border-none bg-slate-900 text-white p-10 shadow-2xl relative overflow-hidden">
+            <Card className="rounded-[40px] border-2 bg-slate-900 text-white p-10 shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-8 opacity-10"><ShieldAlert size={120} /></div>
                 <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
                     <div className="space-y-4">
@@ -179,7 +179,7 @@ export default function ProsecutionStatusPage() {
 
 function ProsecutionRow({ id, accused, stage, date, status, alert }: any) {
     return (
-        <TableRow className="border-none hover:bg-slate-50 transition-colors group">
+        <TableRow className="border-2 hover:bg-slate-50 transition-colors group">
             <TableCell className="px-8 py-6">
                 <span className="text-[11px] font-mono font-black text-blue-600 bg-blue-50/50 px-2 py-1 rounded-md">{id}</span>
             </TableCell>
@@ -199,9 +199,9 @@ function ProsecutionRow({ id, accused, stage, date, status, alert }: any) {
                 </div>
             </TableCell>
             <TableCell>
-                <Badge className={`rounded-full px-3 py-1 text-[9px] font-black uppercase border-none shadow-none ${status === 'Active' ? 'bg-blue-100 text-blue-700' :
-                        status === 'Priority' ? 'bg-red-100 text-red-700' :
-                            'bg-slate-100 text-slate-600'
+                <Badge className={`rounded-full px-3 py-1 text-[9px] font-black uppercase border-2 shadow-none ${status === 'Active' ? 'bg-blue-100 text-blue-700' :
+                    status === 'Priority' ? 'bg-red-100 text-red-700' :
+                        'bg-slate-100 text-slate-600'
                     }`}>
                     {status}
                 </Badge>

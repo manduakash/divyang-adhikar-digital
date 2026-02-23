@@ -59,7 +59,7 @@ export default function EducationGrievanceAction() {
                                         <MessageSquare className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-300 group-focus-within:text-indigo-600 transition-colors" />
                                         <Input
                                             placeholder="e.g. GRV-EDU-2024-910"
-                                            className="h-14 pl-12 rounded-2xl bg-slate-50 border-none font-mono font-black text-indigo-600 uppercase"
+                                            className="h-14 pl-12 rounded-2xl bg-slate-50 border-2 font-mono font-black text-indigo-600 uppercase"
                                         />
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@ export default function EducationGrievanceAction() {
                                         <GraduationCap className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-300 group-focus-within:text-indigo-600 transition-colors" />
                                         <Input
                                             placeholder="Enter Student ID or Full Name"
-                                            className="h-14 pl-12 rounded-2xl bg-slate-50 border-none font-bold text-slate-800"
+                                            className="h-14 pl-12 rounded-2xl bg-slate-50 border-2 font-bold text-slate-800"
                                         />
                                     </div>
                                 </div>
@@ -83,14 +83,14 @@ export default function EducationGrievanceAction() {
                                         <School className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-300" />
                                         <Input
                                             placeholder="Search Registered School..."
-                                            className="h-14 pl-12 rounded-2xl bg-slate-50 border-none font-bold text-slate-800"
+                                            className="h-14 pl-12 rounded-2xl bg-slate-50 border-2 font-bold text-slate-800"
                                         />
                                     </div>
                                 </div>
                                 <div className="space-y-3">
                                     <label className="text-[11px] font-black uppercase text-slate-500 ml-1">4. Nature of Issue</label>
                                     <Select>
-                                        <SelectTrigger className="h-14 rounded-2xl bg-slate-50 border-none px-5 font-bold text-slate-700">
+                                        <SelectTrigger className="h-14 rounded-2xl bg-slate-50 border-2 px-5 font-bold text-slate-700">
                                             <SelectValue placeholder="Select Issue Category" />
                                         </SelectTrigger>
                                         <SelectContent className="rounded-2xl">
@@ -112,7 +112,7 @@ export default function EducationGrievanceAction() {
                                     </button>
                                 </div>
                                 <Textarea
-                                    className="min-h-[200px] rounded-[32px] bg-slate-50 border-none p-8 text-sm font-medium leading-relaxed resize-none focus:ring-2 focus:ring-indigo-600"
+                                    className="min-h-[200px] rounded-[32px] bg-slate-50 border-2 p-8 text-sm font-medium leading-relaxed resize-none focus:ring-2 focus:ring-indigo-600"
                                     placeholder="Provide detailed findings of the hearing or site inspection. Cross-reference with Section 16 of the PwD Act..."
                                 />
                             </div>
@@ -174,7 +174,7 @@ export default function EducationGrievanceAction() {
 
                 {/* SIDEBAR: STATUTORY CONTEXT (DEO Specific) */}
                 <div className="space-y-8 sticky top-28 h-fit">
-                    <Card className="rounded-[40px] border-none bg-slate-900 text-white p-8 shadow-2xl relative overflow-hidden">
+                    <Card className="rounded-[40px] border-2 bg-slate-900 text-white p-8 shadow-2xl relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-6 opacity-10"><ShieldAlert size={100} /></div>
                         <div className="relative z-10 space-y-6">
                             <div className="flex items-center gap-3">

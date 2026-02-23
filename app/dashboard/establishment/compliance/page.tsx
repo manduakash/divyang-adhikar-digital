@@ -13,7 +13,7 @@ export default function ComplianceModule() {
 
             {/* AUTO-CALCULATED SCORECARD */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <Card className="md:col-span-3 bg-slate-900 text-white rounded-[40px] p-8 border-none shadow-2xl flex items-center justify-between overflow-hidden relative">
+                <Card className="md:col-span-3 bg-slate-900 text-white rounded-[40px] p-8 border-2 shadow-2xl flex items-center justify-between overflow-hidden relative">
                     <div className="relative z-10 space-y-4">
                         <div>
                             <h2 className="text-sm font-black text-blue-400 uppercase tracking-[0.3em]">Institutional Compliance Engine</h2>
@@ -67,7 +67,7 @@ export default function ComplianceModule() {
                             <div className="space-y-6">
                                 <div className="space-y-2">
                                     <label className="text-[10px] font-black uppercase text-slate-400 tracking-widest ml-1">Corrective Measures Taken</label>
-                                    <textarea className="w-full h-32 bg-slate-50 border-none rounded-3xl p-5 text-sm font-bold focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Details of ramps, lifts, toilets, signage..." />
+                                    <textarea className="w-full h-32 bg-slate-50 border-2 rounded-3xl p-5 text-sm font-bold focus:ring-2 focus:ring-blue-500 outline-none" placeholder="Details of ramps, lifts, toilets, signage..." />
                                 </div>
                                 <div className="p-8 border-2 border-dashed border-slate-100 rounded-[32px] flex flex-col items-center justify-center group hover:bg-slate-50 transition-all cursor-pointer">
                                     <Upload className="text-slate-300 group-hover:text-blue-600 mb-2" size={32} />
@@ -134,7 +134,7 @@ function ComplianceField({ label, type = "text", placeholder, options }: any) {
                     ))}
                 </div>
             ) : (
-                <Input type={type} placeholder={placeholder} className="h-12 bg-slate-50 border-none rounded-2xl px-5 font-bold focus-visible:ring-blue-600" />
+                <Input type={type} placeholder={placeholder} className="h-12 bg-slate-50 border-2 rounded-2xl px-5 font-bold focus-visible:ring-blue-600" />
             )}
         </div>
     )
