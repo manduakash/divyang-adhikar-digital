@@ -123,10 +123,10 @@ export function DEOSidebar() {
 
             {/* 4. LOG OUT (Item 10) */}
             <div className="p-4 border-t border-slate-100 bg-slate-50/30">
-                <button className="w-full flex items-center gap-3 p-4 rounded-xl text-slate-500 hover:text-red-600 hover:bg-red-50 transition-all font-black text-[11px] uppercase tracking-widest">
+                <Link href="/" className="w-full flex items-center gap-3 p-4 rounded-xl text-slate-500 hover:text-red-600 hover:bg-red-50 transition-all font-black text-[11px] uppercase tracking-widest">
                     <LogOut size={18} />
-                    Exit Dashboard
-                </button>
+                    Logout
+                </Link>
             </div>
         </div>
     );

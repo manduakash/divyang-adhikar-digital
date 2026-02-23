@@ -34,6 +34,9 @@ export default function Login() {
         case 'deo':
           router.push('/dashboard/district/deo');
           break;
+        case 'ddma':
+          router.push('/dashboard/district/ddma');
+          break;
         case 'state':
           router.push('/dashboard/state');
           break;
@@ -92,8 +95,9 @@ export default function Login() {
                 <SelectContent className="rounded-2xl p-2">
                   <RoleOption value="pwd" label="Citizen / Beneficiary" icon={<Accessibility size={16} />} />
                   <RoleOption value="est" label="Establishment / Institution" icon={<Building2 size={16} />} />
-                  <RoleOption value="dm" label="District-Level Authority (DM)" icon={<Landmark size={16} />} />
-                  <RoleOption value="deo" label="District-Level Officer (DEO)" icon={<Landmark size={16} />} />
+                  <RoleOption value="dm" label="District Magistrate (DM)" icon={<Landmark size={16} />} />
+                  <RoleOption value="deo" label="District Education Officer (DEO)" icon={<Landmark size={16} />} />
+                  <RoleOption value="ddma" label="District Disaster Management Authority (DDMA)" icon={<Landmark size={16} />} />
                   <RoleOption value="state" label="State-Level Authority" icon={<ShieldCheck size={16} />} />
                   <RoleOption value="central" label="Central-Level Authority" icon={<Landmark size={16} />} />
                   <RoleOption value="admin" label="System Administrator" icon={<UserCog size={16} />} />
