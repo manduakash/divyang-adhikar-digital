@@ -14,17 +14,17 @@ export default function LandingPage() {
 
   const heroImages = [
     {
-      url: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=2000",
+      url: "/login1.jpg",
       title: "Operationalizing the Rights of PwD Act, 2016",
       subtitle: "From statutory mandate to administrative action."
     },
     {
-      url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2000",
+      url: "/login2.jpg",
       title: "A Unified Digital Backbone for India",
       subtitle: "Connecting PwDs, Establishments, and Authorities seamlessly."
     },
     {
-      url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=2000",
+      url: "/login3.jpg",
       title: "Empowerment through Governance",
       subtitle: "Real-time monitoring and transparent grievance redressal."
     }
@@ -107,14 +107,15 @@ export default function LandingPage() {
                   <Button className="bg-white text-slate-900 hover:bg-blue-50 h-14 px-10 rounded-2xl font-black uppercase tracking-widest text-xs">
                     Explore Features
                   </Button>
-                  <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 h-14 px-10 rounded-2xl font-black uppercase tracking-widest text-xs backdrop-blur-sm">
+                  <Button variant="outline" className="border-white/20 text-slate-100/50 bg-white/10 cursor-pointer hover:bg-white/10 h-14 px-10 rounded-2xl font-black uppercase tracking-widest text-xs backdrop-blur-sm hover:text-slate-100 hover:border-white">
                     Read the Act
                   </Button>
                 </div>
               </div>
             </div>
           </div>
-        ))}
+        ))
+        }
         {/* Hero Indicators */}
         <div className="absolute bottom-12 left-24 z-30 flex gap-2">
           {heroImages.map((_, i) => (
@@ -124,20 +125,20 @@ export default function LandingPage() {
             />
           ))}
         </div>
-      </section>
+      </section >
 
       {/* 4. REAL-TIME STATUTORY TRACKER (Section 8 Logic) */}
-      <section className="py-12 bg-white border-b border-slate-100">
+      < section className="py-12 bg-white border-b border-slate-100" >
         <div className="max-w-7xl mx-auto px-12 grid grid-cols-2 md:grid-cols-4 gap-12">
           <StatCard count="1.2M+" label="Citizens Registered" icon={<Users className="text-blue-600" />} />
           <StatCard count="45K+" label="Establishments Covered" icon={<Building2 className="text-purple-600" />} />
           <StatCard count="98.2%" label="Grievance Redressal" icon={<CheckCircle2 className="text-emerald-600" />} />
           <StatCard count="12k+" label="Compliant Buildings" icon={<Landmark className="text-orange-600" />} />
         </div>
-      </section>
+      </section >
 
       {/* 5. STAKEHOLDER ECOSYSTEM (Section 1-6 of Docs) */}
-      <section className="py-24 px-12 bg-slate-50/50">
+      < section className="py-24 px-12 bg-slate-50/50" >
         <div className="max-w-7xl mx-auto space-y-16">
           <div className="text-center space-y-4 max-w-2xl mx-auto">
             <h2 className="text-sm font-black text-blue-600 uppercase tracking-[0.2em]">Stakeholder Network</h2>
@@ -167,10 +168,10 @@ export default function LandingPage() {
             />
           </div>
         </div>
-      </section>
+      </section >
 
       {/* 6. KEY OBJECTIVES (Introduction of Docs) */}
-      <section className="py-24 px-12">
+      < section className="py-24 px-12" >
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
@@ -212,10 +213,10 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* 7. FOOTER */}
-      <footer className="bg-slate-950 text-white py-24 px-12">
+      < footer className="bg-slate-950 text-white py-24 px-12" >
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-white/10 pb-16">
           <div className="col-span-1 md:col-span-1 space-y-6">
             <div className="flex items-center gap-4">
@@ -239,8 +240,8 @@ export default function LandingPage() {
             <button className="hover:text-white transition-colors">SLA Agreement</button>
           </div>
         </div>
-      </footer>
-    </div>
+      </footer >
+    </div >
   );
 }
 

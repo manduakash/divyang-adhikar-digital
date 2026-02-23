@@ -28,8 +28,11 @@ export default function Login() {
         case 'est':
           router.push('/dashboard/establishment');
           break;
-        case 'district':
-          router.push('/dashboard/district');
+        case 'dm':
+          router.push('/dashboard/district/dm');
+          break;
+        case 'deo':
+          router.push('/dashboard/district/deo');
           break;
         case 'state':
           router.push('/dashboard/state');
@@ -89,7 +92,8 @@ export default function Login() {
                 <SelectContent className="rounded-2xl p-2">
                   <RoleOption value="pwd" label="Citizen / Beneficiary" icon={<Accessibility size={16} />} />
                   <RoleOption value="est" label="Establishment / Institution" icon={<Building2 size={16} />} />
-                  <RoleOption value="district" label="District-Level Authority" icon={<Landmark size={16} />} />
+                  <RoleOption value="dm" label="District-Level Authority (DM)" icon={<Landmark size={16} />} />
+                  <RoleOption value="deo" label="District-Level Officer (DEO)" icon={<Landmark size={16} />} />
                   <RoleOption value="state" label="State-Level Authority" icon={<ShieldCheck size={16} />} />
                   <RoleOption value="central" label="Central-Level Authority" icon={<Landmark size={16} />} />
                   <RoleOption value="admin" label="System Administrator" icon={<UserCog size={16} />} />

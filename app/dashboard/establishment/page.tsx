@@ -1,67 +1,121 @@
 // app/dashboard/establishment/page.tsx
-import { Progress } from "@/components/ui/progress";
+"use client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Activity, Upload, FileCheck, Accessibility } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { MessageSquare, Clock, AlertCircle, Accessibility, Gavel, TrendingUp } from "lucide-react";
 
 export default function EstablishmentDashboard() {
-  const complianceAreas = [
-    { label: "Physical Accessibility", score: 85, color: "bg-green-600" },
-    { label: "Digital Accessibility", score: 40, color: "bg-red-600" },
-    { label: "PwD Employment (4%)", score: 100, color: "bg-blue-600" },
-    { label: "Equal Opportunity Policy", score: 100, color: "bg-blue-600" },
-    { label: "Grievance Response", score: 72, color: "bg-orange-600" },
-  ];
-
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 animate-in fade-in duration-700">
       <div className="flex justify-between items-end">
         <div>
-          <h1 className="text-2xl font-bold text-slate-800">National Bank - Regional HQ</h1>
-          <p className="text-slate-500 italic text-sm underline cursor-pointer">Establishment ID: EST-UP-LKO-4492</p>
+            <h1 className="text-3xl font-black text-slate-900 tracking-tight">Executive Summary</h1>
+            <p className="text-slate-500 font-medium">Monitoring statutory response and institutional compliance.</p>
         </div>
-        <div className="flex gap-3">
-          <Button variant="default" className="gap-2"><Upload className="w-4 h-4" /> Submit Returns</Button>
-          <Button variant="outline" className="gap-2"><Activity className="w-4 h-4" /> Accessibility Audit</Button>
+        <Badge className="h-8 px-4 bg-slate-900 text-white font-black tracking-widest text-[10px] uppercase">FY 2024-25</Badge>
+      </div>
+
+      {/* SECTION 5.1: KEY INDICATORS */}
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <KPIBox label="Total Grievances" value="124" icon={<MessageSquare className="text-blue-600"/>} />
+        <KPIBox label="Pending" value="18" icon={<Clock className="text-orange-600"/>} />
+        <KPIBox label="Overdue" value="05" icon={<AlertCircle className="text-red-600"/>} alert />
+        <KPIBox label="Access Pending" value="09" icon={<Accessibility className="text-purple-600"/>} />
+        <KPIBox label="Directions" value="02" icon={<Gavel className="text-slate-900"/>} />
+        <div className="bg-slate-900 rounded-[24px] p-5 text-white flex flex-col justify-between shadow-xl">
+            <span className="text-[9px] font-black uppercase tracking-widest text-slate-500">Compliance Score</span>
+            <div className="text-3xl font-black text-blue-400">79%</div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-        <Card className="md:col-span-1 bg-slate-900 text-white">
-          <CardHeader>
-            <CardTitle className="text-sm font-medium uppercase text-slate-400">Compliance Score</CardTitle>
+      {/* SECTION 12: GRAPHS & CHARTS */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Grievance Trend Analysis (Line Chart Mock) */}
+        <Card className="rounded-[32px] border-slate-200 bg-white shadow-sm overflow-hidden">
+          <CardHeader className="p-6 border-b border-slate-50">
+            <CardTitle className="text-xs font-black uppercase tracking-widest text-slate-400">Grievance Trend Analysis</CardTitle>
           </CardHeader>
-          <CardContent className="text-center pb-8">
-            <div className="text-6xl font-black text-blue-400">79%</div>
-            <p className="mt-2 text-xs text-slate-400">Ranked #14 in District</p>
-          </CardContent>
-        </Card>
-
-        <Card className="md:col-span-3">
-          <CardHeader>
-            <CardTitle className="text-sm font-bold uppercase tracking-widest text-slate-500">Statutory Compliance Breakdown</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            {complianceAreas.map((area, i) => (
-              <div key={i} className="space-y-2">
-                <div className="flex justify-between text-sm font-medium">
-                  <span>{area.label}</span>
-                  <span>{area.score}%</span>
+          <CardContent className="p-8 h-64 flex items-end justify-between gap-2">
+            {[40, 60, 45, 90, 100, 80, 50, 70, 85].map((h, i) => (
+                <div key={i} className="w-full bg-slate-100 rounded-t-lg relative group transition-all hover:bg-blue-600" style={{ height: `${h}%` }}>
+                    <span className="absolute -top-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 text-[10px] font-black text-blue-600">Month {i+1}</span>
                 </div>
-                <Progress value={area.score} className="h-2" indicatorClassName={area.color} />
-              </div>
             ))}
           </CardContent>
         </Card>
-      </div>
 
-      {/* 8 Permanent RHS Action Buttons as per docs */}
-      <div className="grid grid-cols-4 gap-4 mt-6">
-        <Button variant="secondary" className="h-20 flex flex-col gap-1 text-xs">
-          <FileCheck className="w-5 h-5" /> Acknowledge Grievance
-        </Button>
-        {/* ... Repeated for 8 buttons defined in docs ... */}
+        {/* PwD Employment Composition (Donut Chart Mock) */}
+        <Card className="rounded-[32px] border-slate-200 bg-white shadow-sm">
+           <CardHeader className="p-6">
+              <CardTitle className="text-xs font-black uppercase tracking-widest text-slate-400">PwD Employment Composition</CardTitle>
+           </CardHeader>
+           <CardContent className="flex items-center justify-around h-64">
+                <div className="relative h-48 w-48 rounded-full border-[16px] border-blue-600 flex items-center justify-center">
+                    <div className="text-center">
+                        <p className="text-3xl font-black text-slate-900">4.2%</p>
+                        <p className="text-[10px] font-bold text-slate-400 uppercase">Compliance</p>
+                    </div>
+                </div>
+                <div className="space-y-4">
+                    <LegendItem color="bg-blue-600" label="PwD Employees" val="12" />
+                    <LegendItem color="bg-slate-100" label="General" val="278" />
+                </div>
+           </CardContent>
+        </Card>
+
+        {/* Compliance Area Score Comparison (Bar Chart) */}
+        <Card className="rounded-[32px] border-slate-200 lg:col-span-2 bg-white shadow-sm overflow-hidden">
+            <CardHeader className="p-6 border-b border-slate-50">
+                <CardTitle className="text-xs font-black uppercase tracking-widest text-slate-400">Compliance Area Score Comparison</CardTitle>
+            </CardHeader>
+            <CardContent className="p-8 space-y-6">
+                <ComplianceBar label="Physical Accessibility" score={85} />
+                <ComplianceBar label="Digital Accessibility" score={40} color="bg-red-500" />
+                <ComplianceBar label="PwD Employment" score={100} color="bg-green-500" />
+                <ComplianceBar label="EO Policy" score={95} />
+                <ComplianceBar label="Grievance Response" score={72} />
+            </CardContent>
+        </Card>
       </div>
     </div>
   );
+}
+
+function KPIBox({ label, value, icon, alert }: any) {
+    return (
+        <div className={`p-5 rounded-[24px] border border-slate-100 bg-white shadow-sm ${alert ? 'ring-1 ring-red-100' : ''}`}>
+            <div className="flex items-center justify-between mb-4">
+                <div className="p-2 bg-slate-50 rounded-lg">{icon}</div>
+                {alert && <div className="h-2 w-2 rounded-full bg-red-500 animate-pulse" />}
+            </div>
+            <p className="text-2xl font-black text-slate-900 leading-none">{value}</p>
+            <p className="text-[9px] font-black uppercase text-slate-400 tracking-widest mt-2">{label}</p>
+        </div>
+    );
+}
+
+function ComplianceBar({ label, score, color }: any) {
+    return (
+        <div className="space-y-2">
+            <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-widest">
+                <span>{label}</span>
+                <span>{score}%</span>
+            </div>
+            <div className="h-3 w-full bg-slate-100 rounded-full overflow-hidden">
+                <div className={`h-full ${color || 'bg-blue-600'} transition-all duration-1000`} style={{ width: `${score}%` }} />
+            </div>
+        </div>
+    )
+}
+
+function LegendItem({ color, label, val }: any) {
+    return (
+        <div className="flex items-center gap-3">
+            <div className={`h-3 w-3 rounded-full ${color}`} />
+            <div>
+                <p className="text-[10px] font-black text-slate-900 uppercase leading-none">{val}</p>
+                <p className="text-[9px] font-medium text-slate-400 uppercase tracking-tighter">{label}</p>
+            </div>
+        </div>
+    )
 }
