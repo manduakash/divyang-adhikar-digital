@@ -36,8 +36,8 @@ export default function Login() {
         case 'dpp': router.push('/dashboard/district/dpp'); break;
 
         // State Authorities
-        case 'state-nodal': router.push('/dashboard/state-nodal'); break;
-        case 'state-commissioner': router.push('/dashboard/state-commissioner'); break;
+        case 'state-nodal': router.push('/dashboard/state/state-nodal'); break;
+        case 'state-commissioner': router.push('/dashboard/state/state-commissioner'); break;
 
         // Central Authorities
         case 'central': router.push('/dashboard/central'); break;
