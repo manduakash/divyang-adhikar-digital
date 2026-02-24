@@ -23,14 +23,26 @@ export default function Login() {
     // Dynamic Redirection based on Stakeholder Roles (Section 1-6 of Docs)
     setTimeout(() => {
       switch (role) {
+        // Citizens & Beneficiaries
         case 'pwd': router.push('/dashboard/pwd'); break;
+
+        // Establishment / Institution
         case 'est': router.push('/dashboard/establishment'); break;
+
+        // District Authorities
         case 'dm': router.push('/dashboard/district/dm'); break;
         case 'deo': router.push('/dashboard/district/deo'); break;
         case 'ddma': router.push('/dashboard/district/ddma'); break;
         case 'dpp': router.push('/dashboard/district/dpp'); break;
-        case 'state': router.push('/dashboard/state'); break;
+
+        // State Authorities
+        case 'state-nodal': router.push('/dashboard/state-nodal'); break;
+        case 'state-commissioner': router.push('/dashboard/state-commissioner'); break;
+
+        // Central Authorities
         case 'central': router.push('/dashboard/central'); break;
+
+        // Admin
         case 'admin': router.push('/dashboard/admin'); break;
         default: router.push('/');
       }
@@ -99,30 +111,44 @@ export default function Login() {
                       District Authorities
                     </SelectLabel>
                     <RoleOption value="dm" label="District Magistrate (DM)" icon={<Landmark size={16} />} />
-                    <RoleOption value="deo" label="Education Officer (DEO)" icon={<GraduationCap size={16} />} />
-                    <RoleOption value="ddma" label="Disaster Authority (DDMA)" icon={<Siren size={16} />} />
-                    <RoleOption value="dpp" label="Special Prosecutor (DPP)" icon={<Scale size={16} />} />
+                    <RoleOption value="deo" label="District Education Officer (DEO)" icon={<GraduationCap size={16} />} />
+                    <RoleOption value="ddma" label="District Disaster Management Authority (DDMA)" icon={<Siren size={16} />} />
+                    <RoleOption value="dpp" label="District Special Public Prosecutor (DPP)" icon={<Scale size={16} />} />
                   </SelectGroup>
 
                   <DropdownMenuSeparator className="my-2 opacity-50" />
 
-                  {/* GROUP 3: STATE & NATIONAL */}
+                  {/* GROUP 3: STATE */}
                   <SelectGroup>
                     <SelectLabel className="px-3 py-2 text-[9px] font-black text-purple-600 uppercase tracking-[0.2em]">
-                      Apex Authorities
+                      State Level Authorities
                     </SelectLabel>
-                    <RoleOption value="state" label="State-Level Authority" icon={<ShieldCheck size={16} />} />
-                    <RoleOption value="central" label="Central-Level Authority" icon={<Landmark size={16} />} />
+                    <RoleOption value="state-nodal" label="State Nodal Department Authority" icon={<ShieldCheck size={16} />} />
+                    <RoleOption value="state-commissioner" label="State Commissioner Authority" icon={<Landmark size={16} />} />
+                    <RoleOption value="state-advisory-board" label="State Advisory Board Authority" icon={<ShieldCheck size={16} />} />
+                    <RoleOption value="sdma" label="State Disaster Management Authority" icon={<Siren size={16} />} />
+                    <RoleOption value="ccpd" label="Chief Commissioner of PwD" icon={<Landmark size={16} />} />
+                  </SelectGroup>
+
+                  <DropdownMenuSeparator className="my-2 opacity-50" />
+
+                  <SelectGroup>
+                    <SelectLabel className="px-3 py-2 text-[9px] font-black text-emerald-600 uppercase tracking-[0.2em]">
+                      Central Level Authorities
+                    </SelectLabel>
+                    <RoleOption value="nadb" label="National Advisory Board Authority" icon={<ShieldCheck size={16} />} />
+                    <RoleOption value="ndma" label="National Disaster Management Authority" icon={<Siren size={16} />} />
+                    <RoleOption value="depwd" label="Ministry of Social Justice & Empowerment" icon={<ShieldCheck size={16} />} />
                   </SelectGroup>
 
                   <DropdownMenuSeparator className="my-2 opacity-50" />
 
                   {/* GROUP 4: SYSTEM */}
                   <SelectGroup>
-                    <SelectLabel className="px-3 py-2 text-[9px] font-black text-slate-400 uppercase tracking-[0.2em]">
-                      IT Governance
+                    <SelectLabel className="px-3 py-2 text-[9px] font-black text-amber-400 uppercase tracking-[0.2em]">
+                      System Governance
                     </SelectLabel>
-                    <RoleOption value="admin" label="System Administrator" icon={<UserCog size={16} />} />
+                    <RoleOption value="super-admin" label="Super Admin" icon={<UserCog size={16} />} />
                   </SelectGroup>
 
                 </SelectContent>

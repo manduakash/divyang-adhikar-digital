@@ -5,13 +5,14 @@ import { Button } from "@/components/ui/button";
 import {
   Scale, Gavel, Calendar, AlertCircle,
   CheckCircle2, History, ArrowUpRight,
-  Filter, Sparkles, 
-  ShieldAlert, Timer, 
+  Filter, Sparkles,
+  ShieldAlert, Timer,
   ChevronRight, Trophy, Plus, Radio
 } from "lucide-react";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
-  ResponsiveContainer, BarChart, Bar, Legend, Cell} from 'recharts';
+  ResponsiveContainer, BarChart, Bar, Legend, Cell
+} from 'recharts';
 
 export default function PPDashboard() {
 
@@ -131,7 +132,7 @@ export default function PPDashboard() {
       {/* 4. SECTION 9: TOP 5 / BOTTOM 5 (Full Professional Snapshot) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/*  TOP 5 FAST-MOVING */}
-        <Card className="rounded-[40px] border-none bg-slate-900 text-white shadow-2xl overflow-hidden relative">
+        <Card className="rounded-[40px] border-2 bg-slate-900 text-white shadow-2xl overflow-hidden relative">
           <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/blueprint.png')]" />
           <CardHeader className="p-8 border-b border-white/5 bg-white/5 flex flex-row justify-between items-center relative z-10">
             <div>

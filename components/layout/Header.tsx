@@ -16,7 +16,7 @@ export default function Header({ role }: { role: string }) {
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-slate-400" />
           <Input
             placeholder="Search PwD ID, Case No, or Establishment..."
-            className="pl-9 bg-slate-50 border-2 focus-visible:ring-1"
+            className="pl-9 bg-slate-50 border-none focus-visible:ring-1"
           />
         </div>
       </div>

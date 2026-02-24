@@ -318,7 +318,7 @@ function StakeholderCard({ title, icon, items, color }: any) {
     <div className="bg-white p-6 md:p-8 rounded-[30px] md:rounded-[40px] border border-slate-100 shadow-sm hover:shadow-2xl hover:border-blue-100 transition-all group overflow-hidden relative">
       <div className={`absolute top-0 right-0 w-32 h-32 ${color} opacity-[0.03] -mr-8 -mt-8 rounded-full group-hover:scale-150 transition-transform duration-700`} />
       <div className={`h-12 w-12 md:h-16 md:w-16 ${color} text-white rounded-xl md:rounded-2xl flex items-center justify-center mb-6 md:mb-8 shadow-lg`}>
-        {React.cloneElement(icon as React.ReactElement, { size: 28 })}
+        {React.cloneElement(icon as React.ReactElement, {})}
       </div>
       <h3 className="text-lg md:text-xl font-black text-slate-900 mb-4 md:mb-6 uppercase tracking-tight">{title}</h3>
       <ul className="space-y-3 md:space-y-4">

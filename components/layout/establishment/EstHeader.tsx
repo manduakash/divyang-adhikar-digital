@@ -54,7 +54,7 @@ export function EstHeader() {
                 <div className="relative">
                     <Button variant="ghost" size="icon" className="text-slate-400 hover:bg-slate-50 rounded-xl">
                         <Bell className="h-6 w-6" />
-                        <span className="absolute top-2 right-2 h-2.5 w-2.5 bg-red-500 border-2 border-white rounded-full" />
+                        <span className="absolute top-2 right-2 h-2.5 w-2.5 bg-red-500 border-none border-white rounded-full" />
                     </Button>
                 </div>
 

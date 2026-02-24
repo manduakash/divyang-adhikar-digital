@@ -58,7 +58,7 @@ export function DEOHeader() {
         <div className="relative">
           <Button variant="ghost" size="icon" className="h-12 w-12 text-slate-400 hover:bg-slate-50 rounded-2xl border border-transparent hover:border-slate-100">
             <Bell className="h-6 w-6" />
-            <span className="absolute top-3 right-3 h-2.5 w-2.5 bg-red-500 border-2 border-white rounded-full animate-pulse" />
+            <span className="absolute top-3 right-3 h-2.5 w-2.5 bg-red-500 border-none border-white rounded-full animate-pulse" />
           </Button>
         </div>
 
