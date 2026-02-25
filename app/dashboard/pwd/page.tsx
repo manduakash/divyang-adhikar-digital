@@ -55,29 +55,33 @@ export default function PwDDashboard() {
             {/* 2. QUICK ACTIONS - Objective Based */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <ActionCard
-                    icon={<FileBadge className="text-blue-600" />}
+                    icon={<FileBadge />}
                     title="Apply for Certificate"
                     desc="New disability certificate application"
                     disabled={profileComplete < 80}
                     link="/pwd/apply-for-certificate"
+                    color="from-blue-500 via-blue-600 to-blue-700"
                 />
                 <ActionCard
-                    icon={<MessageSquare className="text-purple-600" />}
+                    icon={<MessageSquare />}
                     title="Lodge Grievance"
                     desc="Report discrimination or issues"
                     link="/pwd/grievances"
+                    color="from-purple-500 via-purple-600 to-purple-700"
                 />
                 <ActionCard
-                    icon={<Accessibility className="text-orange-600" />}
+                    icon={<Accessibility />}
                     title="Report Barriers"
                     desc="Physical or digital accessibility"
                     link="/pwd/report-barriers"
+                    color="from-orange-500 via-orange-600 to-orange-700"
                 />
                 <ActionCard
-                    icon={<Search className="text-emerald-600" />}
+                    icon={<Search />}
                     title="Track Status"
                     desc="Check your active applications"
                     link="/pwd/track-application-status"
+                    color="from-emerald-500 via-emerald-600 to-emerald-700"
                 />
             </div>
 
@@ -134,21 +138,63 @@ export default function PwDDashboard() {
 
 /* HELPER COMPONENTS */
 
-function ActionCard({ icon, title, desc, disabled = false, link }: { icon: React.ReactNode, title: string, desc: string, disabled?: boolean, link?: string }) {
+function ActionCard({
+    icon,
+    title,
+    desc,
+    disabled = false,
+    link,
+    color = "from-slate-500 via-slate-800 to-slate-900",
+    alert = false,
+}: {
+    icon: React.ReactNode
+    title: string
+    desc: string
+    disabled?: boolean
+    link?: string
+    color?: string
+    alert?: boolean
+}) {
     return (
-        <Card className={`group border-slate-200 shadow-sm rounded-3xl hover:shadow-xl hover:border-blue-200 transition-all cursor-pointer ${disabled ? 'opacity-60 grayscale-[0.5]' : ''}`}>
-            <CardContent className="p-6">
-                <div className="p-3 bg-slate-50 rounded-2xl inline-block mb-4 group-hover:bg-white border border-slate-100 transition-colors">
-                    {icon}
+        <div
+            className={`group relative text-left p-6 rounded-[32px] overflow-hidden transition-all duration-500 h-48 flex flex-col justify-between shadow-md hover:shadow-2xl hover:-translate-y-1.5 bg-gradient-to-br ${color} text-white border-t border-white/20 ${disabled ? "opacity-60 grayscale-[0.6] pointer-events-none" : "cursor-pointer"
+                }`}
+        >
+            {/* subtle texture overlay */}
+            <div className="absolute inset-0 opacity-[0.08] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+
+            <div className="relative z-10 flex flex-col justify-between h-full">
+                {/* Icon */}
+                <div className="h-10 w-10 rounded-xl bg-white/20 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform">
+                    {React.cloneElement(icon as React.ReactElement, {
+                    })}
                 </div>
-                <h3 className="font-black text-slate-800 text-sm mb-1">{title}</h3>
-                <p className="text-xs text-slate-400 font-medium mb-4">{desc}</p>
-                <Link href={(disabled || !link) ? "#" : link} className="flex items-center text-[10px] font-black text-blue-600 uppercase tracking-widest group-hover:gap-2 transition-all">
-                    {disabled ? 'Complete Profile First' : 'Get Started'} <ArrowRight size={12} className="ml-1" />
-                </Link>
-            </CardContent>
-        </Card>
-    );
+
+                {/* Content */}
+                <div>
+                    <h3 className="text-lg font-black tracking-tight drop-shadow-sm">
+                        {title}
+                    </h3>
+                    <p className="text-[11px] font-medium opacity-80 mt-1 leading-relaxed">
+                        {desc}
+                    </p>
+
+                    <Link
+                        href={disabled || !link ? "#" : link}
+                        className="inline-flex items-center mt-4 text-[10px] font-black uppercase tracking-[0.15em] group-hover:gap-2 transition-all"
+                    >
+                        {disabled ? "Complete Profile First" : "Get Started"}
+                        <ArrowRight size={12} className="ml-1 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                </div>
+            </div>
+
+            {/* Alert pulse dot */}
+            {alert && (
+                <div className="absolute top-4 right-4 h-2 w-2 rounded-full bg-white animate-ping" />
+            )}
+        </div>
+    )
 }
 
 function StatusRow({ id, type, date, status, icon }: { id: string, type: string, date: string, status: string, icon: React.ReactNode }) {

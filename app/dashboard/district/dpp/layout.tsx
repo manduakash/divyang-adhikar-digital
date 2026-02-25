@@ -19,10 +19,10 @@ export default function PPLayout({
         <PPHeader />
 
         {/* CENTER: LEGAL WORKSPACE CANVAS */}
-        <main className="flex-1 overflow-y-auto p-8 custom-scrollbar relative">
+        <main className="flex-1 overflow-y-auto p-8 custom-scrollbar relative bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed">
 
-          {/* Subtle Judicial Watermark */}
-          <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.02] flex items-center justify-center overflow-hidden">
+          {/* Professional Power Watermark */}
+          <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.04] flex items-center justify-center overflow-hidden">
             <div className="border-[40px] border-slate-900 rounded-full h-[1000px] w-[1000px]" />
             <div className="absolute border-[1px] border-slate-950 h-full w-[1px] left-1/2" />
             <div className="absolute border-[1px] border-slate-950 w-full h-[1px] top-1/2" />

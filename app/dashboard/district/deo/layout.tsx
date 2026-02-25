@@ -20,10 +20,10 @@ export default function DEOLayout({
         <DEOHeader />
 
         {/* CENTER: INCLUSIVE EDUCATION CANVAS */}
-        <main className="flex-1 overflow-y-auto p-8 custom-scrollbar relative">
+        <main className="flex-1 overflow-y-auto p-8 custom-scrollbar relative bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed">
 
-          {/* Subtle Institutional Watermark */}
-          <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.02] flex items-center justify-center overflow-hidden">
+          {/* Professional Power Watermark */}
+          <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.04] flex items-center justify-center overflow-hidden">
             <div className="border-[2px] border-indigo-900 rounded-full h-[800px] w-[800px] flex items-center justify-center">
               <div className="border-[2px] border-indigo-900 rounded-full h-[600px] w-[600px] flex items-center justify-center">
                 <div className="border-[2px] border-indigo-900 rounded-full h-[400px] w-[400px]" />

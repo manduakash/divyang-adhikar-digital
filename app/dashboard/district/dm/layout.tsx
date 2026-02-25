@@ -20,9 +20,10 @@ export default function DistrictLayout({
         <DistrictHeader />
 
         {/* CENTER: CONTENT CANVAS */}
-        <main className="flex-1 overflow-y-auto p-8 custom-scrollbar relative">
-          {/* Subtle Background Watermark for Authority */}
-          <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] flex items-center justify-center">
+        <main className="flex-1 overflow-y-auto p-8 custom-scrollbar relative bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed">
+
+          {/* Professional Power Watermark */}
+          <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.04] flex items-center justify-center overflow-hidden">
             <div className="border-[40px] border-slate-900 rounded-full h-[600px] w-[600px]" />
           </div>
 

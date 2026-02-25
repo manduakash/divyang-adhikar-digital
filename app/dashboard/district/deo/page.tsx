@@ -20,15 +20,15 @@ export default function DEODashboard() {
 
   // SECTION 3: 9 INDICATOR / ACTION BUTTONS (Page 34)
   const indicators = [
-    { label: "Total Institutions", value: "842", icon: School, color: "text-slate-900", bg: "bg-slate-100" },
-    { label: "PwD Students Enrolled", value: "5,210", icon: GraduationCap, color: "text-blue-600", bg: "bg-blue-50" },
-    { label: "Edu Grievances Recv.", value: "124", icon: MessageSquare, color: "text-indigo-600", bg: "bg-indigo-50" },
-    { label: "Grievances Pending", value: "18", icon: Clock, color: "text-orange-600", bg: "bg-orange-50", alert: true },
-    { label: "Grievances Resolved", value: "106", icon: CheckCircle2, color: "text-green-600", bg: "bg-green-50" },
-    { label: "Non-Compliant (Access)", value: "42", icon: Building2, color: "text-red-600", bg: "bg-red-50", alert: true },
-    { label: "Accommodation Pending", value: "05", icon: Accessibility, color: "text-purple-600", bg: "bg-purple-50" },
-    { label: "Inspections Conducted", value: "88", icon: Search, color: "text-slate-600", bg: "bg-slate-100" },
-    { label: "Directions Pending", value: "12", icon: Gavel, color: "text-red-700", bg: "bg-red-100", alert: true },
+    { label: "Total Institutions", value: "842", icon: School, color: "text-slate-900", bg: "from-slate-800 via-slate-700 to-slate-800" },
+    { label: "PwD Students Enrolled", value: "5,210", icon: GraduationCap, color: "text-blue-600", bg: "from-blue-800 via-blue-700 to-blue-800" },
+    { label: "Edu Grievances Recv.", value: "124", icon: MessageSquare, color: "text-indigo-600", bg: "from-indigo-800 via-indigo-700 to-indigo-800" },
+    { label: "Grievances Pending", value: "18", icon: Clock, color: "text-orange-600", bg: "from-orange-800 via-orange-700 to-orange-800", alert: true },
+    { label: "Grievances Resolved", value: "106", icon: CheckCircle2, color: "text-green-600", bg: "from-green-800 via-green-700 to-green-800" },
+    { label: "Non-Compliant (Access)", value: "42", icon: Building2, color: "text-red-600", bg: "from-red-800 via-red-700 to-red-800", alert: true },
+    { label: "Accommodation Pending", value: "05", icon: Accessibility, color: "text-purple-600", bg: "from-purple-800 via-purple-700 to-purple-800" },
+    { label: "Inspections Conducted", value: "88", icon: Search, color: "text-slate-600", bg: "from-emerald-800 via-emerald-700 to-emerald-800" },
+    { label: "Directions Pending", value: "12", icon: Gavel, color: "text-red-700", bg: "from-red-800 via-red-700 to-red-800", alert: true },
   ];
 
   return (
@@ -51,21 +51,37 @@ export default function DEODashboard() {
       </div>
 
       {/* 2. SECTION 3: 9 INDICATOR BUTTONS */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {indicators.map((item, i) => (
           <button
             key={i}
-            className={`group text-left p-4 rounded-3xl border border-slate-100 bg-white hover:shadow-xl transition-all duration-500 flex flex-col justify-between h-40 ${item.alert ? 'ring-2 ring-red-50' : 'hover:border-indigo-100'}`}
+            className={`group relative text-left p-5 rounded-[32px] overflow-hidden transition-all duration-500 h-44 flex flex-col justify-between shadow-md hover:shadow-2xl hover:-translate-y-1.5 bg-gradient-to-br ${item.bg} text-white border-t border-white/20 ${item.alert ? "ring-2 ring-white/40" : ""
+              }`}
           >
-            <div className={`h-10 w-10 rounded-xl ${item.bg} flex items-center justify-center ${item.color} group-hover:scale-110 transition-transform duration-500 shadow-sm`}>
-              <item.icon size={20} />
+            {/* Texture Overlay */}
+            <div className="absolute inset-0 opacity-[0.08] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+
+            <div className="relative z-10 flex flex-col justify-between h-full">
+              {/* Icon */}
+              <div className="h-11 w-11 rounded-xl bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform duration-500">
+                <item.icon size={18} className="text-white" />
+              </div>
+
+              {/* Content */}
+              <div>
+                <p className="text-2xl font-black tracking-tighter drop-shadow-sm">
+                  {item.value}
+                </p>
+                <p className="text-[9px] font-black uppercase tracking-[0.15em] opacity-80 leading-tight mt-1 group-hover:opacity-100 transition-all">
+                  {item.label}
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="text-2xl font-black text-slate-900 tracking-tighter">{item.value}</p>
-              <p className="text-[8px] font-black uppercase text-slate-400 tracking-widest leading-tight mt-1 group-hover:text-indigo-600 transition-colors">
-                {item.label}
-              </p>
-            </div>
+
+            {/* Alert Pulse */}
+            {item.alert && (
+              <div className="absolute top-4 right-4 h-2 w-2 rounded-full bg-white animate-ping" />
+            )}
           </button>
         ))}
       </div>

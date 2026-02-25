@@ -15,7 +15,13 @@ export default function EstablishmentLayout({ children }: { children: React.Reac
         <EstHeader />
         <div className="flex-1 flex overflow-hidden">
           {/* Main Content Area */}
-          <main className="flex-1 overflow-y-auto p-8 custom-scrollbar">
+          <main className="flex-1 overflow-y-auto p-8 custom-scrollbar relative bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed">
+
+            {/* Professional Power Watermark */}
+            <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.04] flex items-center justify-center overflow-hidden">
+              {/* <div className="border-[40px] border-slate-900 rounded-full h-[600px] w-[600px]" /> */}
+            </div>
+
             {children}
           </main>
 

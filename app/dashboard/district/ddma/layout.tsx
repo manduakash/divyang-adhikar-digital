@@ -21,10 +21,10 @@ export default function DDMALayout({
         <DDMAHeader />
 
         {/* CENTER: DISASTER MANAGEMENT CANVAS */}
-        <main className="flex-1 overflow-y-auto p-8 custom-scrollbar relative">
+        <main className="flex-1 overflow-y-auto p-8 custom-scrollbar relative bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed">
 
-          {/* Subtle Emergency Pulse Watermark */}
-          <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] flex items-center justify-center overflow-hidden">
+          {/* Professional Power Watermark */}
+          <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.04] flex items-center justify-center overflow-hidden">
             <div className="border-[10px] border-orange-600 rounded-full h-[1200px] w-[1200px] animate-[ping_10s_infinite]" />
           </div>
 

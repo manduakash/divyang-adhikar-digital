@@ -11,7 +11,9 @@ import {
     HelpCircle,
     Settings,
     LogOut,
-    ShieldAlert
+    ShieldAlert,
+    ChevronRight,
+    Sparkles
 } from "lucide-react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -22,21 +24,24 @@ export function EstSidebar() {
     return (
         <div className="w-80 h-screen bg-white border-r border-slate-200 flex flex-col font-sans sticky top-0">
 
-            {/* 1. INSTITUTIONAL BRANDING */}
+            {/* 1. INSTITUTIONAL BRANDING - VIBRANT */}
             <div className="p-8 pb-4">
-                <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 bg-slate-900 rounded-xl flex items-center justify-center shadow-lg shadow-slate-200 transition-transform hover:scale-105">
-                        <ShieldAlert className="text-white h-6 w-6" />
+                <div className="flex items-center gap-4 mb-6">
+                    <div className="h-12 w-12 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg shadow-blue-200 transition-transform hover:scale-110">
+                        <ShieldAlert className="text-white h-7 w-7" />
                     </div>
                     <div>
-                        <h2 className="text-xl font-black text-slate-900 tracking-tighter leading-none">DAEGS</h2>
-                        <p className="text-[9px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1 italic">Institutional Response</p>
+                        <h2 className="text-2xl font-black text-slate-900 tracking-tighter leading-none">DAEGS</h2>
+                        <p className="text-[10px] font-black text-blue-600 uppercase tracking-[0.2em] mt-1">Institutional</p>
                     </div>
                 </div>
+
             </div>
 
-            {/* 2. STATUTORY MENU (Items 1-6) */}
-            <nav className="flex-1 px-4 pt-10 space-y-1.5 overflow-y-auto custom-scrollbar">
+            {/* 2. STATUTORY MENU */}
+            <nav className="flex-1 px-4 pt-2 space-y-1.5 overflow-y-auto custom-scrollbar">
+
+                <p className="text-[9px] font-black text-slate-400 uppercase tracking-[0.3em] ml-4 mb-3">Menu</p>
 
                 <NavItem
                     href="/dashboard/establishment"
@@ -82,8 +87,9 @@ export function EstSidebar() {
                     active={pathname === '/dashboard/establishment/reports'}
                 />
 
-                {/* 3. SYSTEM MENU (Items 7-8) */}
+                {/* 3. SYSTEM SECTION */}
                 <div className="pt-8 mt-8 border-t border-slate-100">
+                    <p className="text-[9px] font-black text-slate-400 uppercase tracking-[0.3em] ml-4 mb-3">System Hub</p>
                     <NavItem
                         href="/dashboard/establishment/help"
                         icon={<HelpCircle size={18} />}
@@ -99,12 +105,15 @@ export function EstSidebar() {
                 </div>
             </nav>
 
-            {/* 4. LOG OUT (Item 9) */}
-            <div className="p-4 border-t border-slate-100">
-                <button className="w-full flex items-center gap-3 p-4 rounded-xl text-red-500 hover:bg-red-50 transition-all font-black text-[11px] uppercase tracking-widest">
-                    <LogOut size={18} />
-                    Log Out
-                </button>
+            {/* 4. LOG OUT - DIGNIFIED RED */}
+            <div className="p-4 border-t border-slate-100 bg-slate-50/50">
+                <Link href="/" className="w-full flex items-center justify-between p-4 rounded-xl text-slate-500 hover:text-red-600 hover:bg-red-50 transition-all group">
+                    <div className="flex items-center gap-3">
+                        <LogOut size={18} className="group-hover:-translate-x-1 transition-transform" />
+                        <span className="text-[11px] font-black uppercase tracking-widest">Logout</span>
+                    </div>
+                    <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
             </div>
         </div>
     );
@@ -116,22 +125,33 @@ function NavItem({ href, icon, label, active = false, badge }: { href: string, i
     return (
         <Link
             href={href}
-            className={`w-full flex items-center justify-between p-3.5 rounded-xl transition-all group ${active
-                ? 'bg-slate-900 text-white shadow-xl shadow-slate-200'
-                : 'text-slate-500 hover:bg-slate-50 hover:text-slate-900'
+            className={`w-full flex items-center justify-between p-4 rounded-2xl transition-all duration-300 group relative overflow-hidden ${active
+                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xl shadow-blue-200 scale-[1.02]'
+                : 'text-slate-500 hover:bg-blue-50/50 hover:text-blue-700'
                 }`}
         >
-            <div className="flex items-center gap-3">
-                <span className={`${active ? 'text-blue-400' : 'text-slate-400 group-hover:text-blue-600'} transition-colors`}>
+            {/* Active Texture Overlay */}
+            {active && (
+                <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/topography.png')]" />
+            )}
+
+            <div className="flex items-center gap-3 relative z-10">
+                <span className={`${active ? 'text-white' : 'text-slate-400 group-hover:text-blue-600'} transition-all duration-300 group-hover:scale-110`}>
                     {icon}
                 </span>
-                <span className="text-[10px] font-black uppercase tracking-[0.15em] leading-none">{label}</span>
+                <span className={`text-[10px] font-black uppercase tracking-[0.12em] leading-none ${active ? 'text-white' : 'text-slate-600'}`}>
+                    {label}
+                </span>
             </div>
 
             {badge && !active && (
-                <span className="bg-red-500 text-white text-[9px] font-black px-2 py-0.5 rounded-md min-w-[20px] text-center shadow-sm">
+                <span className="bg-red-500 text-white text-[9px] font-black px-2 py-0.5 rounded-lg min-w-[22px] text-center shadow-md animate-in zoom-in-50 duration-500 relative z-10">
                     {badge}
                 </span>
+            )}
+
+            {active && (
+                <div className="h-1.5 w-1.5 rounded-full bg-white animate-pulse relative z-10" />
             )}
         </Link>
     );

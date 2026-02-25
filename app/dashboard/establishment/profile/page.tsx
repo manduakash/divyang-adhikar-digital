@@ -155,7 +155,7 @@ function ProfileField({ icon, label, value, full }: any) {
     return (
         <div className={`space-y-2 ${full ? 'md:col-span-2' : ''}`}>
             <label className="text-[9px] font-black uppercase text-slate-400 ml-1 tracking-widest">{label}</label>
-            <div className="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl border border-transparent hover:border-slate-200 transition-all group">
+            <div className="flex items-center gap-3 p-4 bg-slate-50 rounded-2xl border hover:border-slate-200 transition-all group">
                 <span className="text-slate-300 group-hover:text-blue-600 transition-colors">{icon && React.cloneElement(icon, { size: 18 })}</span>
                 <span className="text-sm font-bold text-slate-800">{value}</span>
             </div>
@@ -165,7 +165,7 @@ function ProfileField({ icon, label, value, full }: any) {
 
 function OfficerCard({ role, name, designation, status, active }: any) {
     return (
-        <div className={`p-5 rounded-3xl border transition-all ${active ? 'bg-blue-50 border-blue-100' : 'bg-slate-50 border-transparent hover:bg-white hover:border-slate-200'}`}>
+        <div className={`p-5 rounded-3xl border transition-all ${active ? 'bg-blue-50 border-blue-100' : 'bg-slate-50 hover:bg-white hover:border-slate-200'}`}>
             <div className="flex justify-between items-start mb-3">
                 <div className={`p-2 rounded-xl ${active ? 'bg-blue-600 text-white' : 'bg-white text-slate-400'} shadow-sm`}>
                     <Users size={18} />
