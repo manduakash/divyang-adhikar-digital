@@ -1,39 +1,28 @@
-// components/dashboard/ddma/EmergencyResponseConsole.tsx
 "use client";
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
-    Siren, Navigation, MapPin, Activity,
-    Zap, Clock, CheckCircle2, AlertTriangle,
-    Fingerprint, ArrowLeft, ShieldAlert, Sparkles,
-    Timer, Radio, Info, Smartphone, LocateFixed
+    Siren, Navigation, Activity,
+    Zap, Timer, Radio, Smartphone, LocateFixed, Fingerprint, Sparkles, ShieldAlert
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
-// Dynamic Import for Leaflet to prevent SSR errors
-const MapContainer = dynamic(() => import('react-leaflet').then((mod) => mod.MapContainer), { ssr: false });
-const TileLayer = dynamic(() => import('react-leaflet').then((mod) => mod.TileLayer), { ssr: false });
-const Marker = dynamic(() => import('react-leaflet').then((mod) => mod.Marker), { ssr: false });
-const Popup = dynamic(() => import('react-leaflet').then((mod) => mod.Popup), { ssr: false });
-
-import 'leaflet/dist/leaflet.css';
-import L from 'leaflet';
-
-// Fix for default marker icons in Leaflet + Next.js
-const customMarkerIcon = typeof window !== 'undefined' ? new L.Icon({
-    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41]
-}) : null;
+// IMPORTANT: Dynamically import the map component with SSR disabled
+const EmergencyMap = dynamic(
+    () => import('@/components/map/EmergencyResponseMap'),
+    {
+        ssr: false,
+        loading: () => <div className="h-96 w-full bg-slate-800 animate-pulse rounded-[40px]" />
+    }
+);
 
 export default function EmergencyResponseConsole() {
     const [outcome, setOutcome] = useState<string>('');
-    const [coords, setCoords] = useState({ lat: 26.8467, lng: 80.9462 });
+    const [coords] = useState({ lat: 26.8467, lng: 80.9462 });
 
     return (
         <div className="max-w-7xl mx-auto pb-20 animate-in fade-in duration-700 font-sans">
@@ -56,7 +45,7 @@ export default function EmergencyResponseConsole() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
-                {/* LEFT COLUMN: REQUEST PARAMETERS (8 COLS) */}
+                {/* LEFT COLUMN: REQUEST PARAMETERS */}
                 <div className="lg:col-span-8 space-y-8">
                     <Card className="rounded-[40px] border-slate-200 shadow-2xl overflow-hidden bg-white">
                         <CardHeader className="p-8 border-b border-slate-50 bg-slate-50/50 flex flex-row justify-between items-center">
@@ -161,33 +150,13 @@ export default function EmergencyResponseConsole() {
                     </Card>
                 </div>
 
-                {/* RIGHT COLUMN: LEAFLET GIS MAPPING (4 COLS) */}
+                {/* RIGHT COLUMN: GIS MAPPING */}
                 <div className="lg:col-span-4 space-y-8 sticky top-28 h-fit">
 
-                    {/* LEAFLET MAP CARD */}
                     <Card className="rounded-[40px] border-2 bg-slate-900 shadow-2xl overflow-hidden relative group">
                         <div className="h-96 w-full z-0">
-                            {/* Render Map only on client */}
-                            {typeof window !== 'undefined' && (
-                                <MapContainer
-                                    center={[coords.lat, coords.lng]}
-                                    zoom={15}
-                                    scrollWheelZoom={false}
-                                    style={{ height: '100%', width: '100%', zIndex: 0 }}
-                                >
-                                    <TileLayer
-                                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                                        attribution='&copy; DAEGS GIS Authority'
-                                    />
-                                    <Marker position={[coords.lat, coords.lng]} icon={customMarkerIcon as L.Icon}>
-                                        <Popup>
-                                            <div className="font-bold text-xs uppercase font-sans">
-                                                SOS Location: Amit Kumar
-                                            </div>
-                                        </Popup>
-                                    </Marker>
-                                </MapContainer>
-                            )}
+                            {/* The Map component is now wrapped in EmergencyMap and imported dynamically */}
+                            <EmergencyMap lat={coords?.lat} lng={coords?.lng} />
                         </div>
                         <div className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-xl border border-white/50">
                             <p className="text-[10px] font-black uppercase text-slate-900 flex items-center gap-2">
@@ -221,19 +190,17 @@ export default function EmergencyResponseConsole() {
                         Commit Response Record <Zap size={20} className="text-orange-500 fill-orange-500 group-hover:animate-pulse" />
                     </Button>
                 </div>
-
             </div>
         </div>
     );
 }
 
 /* HELPER COMPONENTS */
-
 function AssistanceBadge({ label, active }: { label: string, active?: boolean }) {
     return (
         <Badge className={`px-4 py-2 rounded-xl font-black text-[9px] uppercase tracking-widest border-2 transition-all ${active
-                ? 'bg-blue-600 text-white border-blue-600 shadow-md'
-                : 'bg-white text-slate-400 border-slate-100'
+            ? 'bg-blue-600 text-white border-blue-600 shadow-md'
+            : 'bg-white text-slate-400 border-slate-100'
             }`}>
             {label}
         </Badge>
