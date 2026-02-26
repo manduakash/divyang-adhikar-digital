@@ -38,6 +38,9 @@ export default function Login() {
         // State Authorities
         case 'state-nodal': router.push('/dashboard/state/state-nodal'); break;
         case 'state-commissioner': router.push('/dashboard/state/state-commissioner'); break;
+        case 'state-advisory-board': router.push('/dashboard/state/state-advisory-board'); break;
+        case 'sdma': router.push('/dashboard/state/sdma'); break;
+        case 'ccpd': router.push('/dashboard/state/ccpd'); break;
 
         // Central Authorities
         case 'central': router.push('/dashboard/central'); break;

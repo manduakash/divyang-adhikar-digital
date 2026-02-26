@@ -93,7 +93,7 @@ export function StateSidebar() {
             <div className="p-4 border-t border-slate-100 bg-slate-50/50">
                 <Link href="/login" className="w-full flex items-center gap-3 p-4 rounded-xl text-slate-500 hover:text-purple-700 transition-all font-black text-[11px] uppercase tracking-widest">
                     <LogOut size={18} />
-                    Log Out State Portal
+                    Log Out
                 </Link>
             </div>
         </div>

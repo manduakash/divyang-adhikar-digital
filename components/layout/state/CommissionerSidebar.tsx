@@ -7,7 +7,9 @@ import {
     Gavel, Scale, ShieldCheck, Briefcase, GraduationCap,
     MessageSquare, History, Activity, Landmark, Bell,
     FileCheck, Users, Info, Building2, HelpCircle, Sparkles, PenTool,
-    FileBarChart
+    FileBarChart,
+    Phone,
+    Headphones
 } from "lucide-react";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -113,7 +115,7 @@ export function CommissionerSidebar() {
                             <SubNavItem link="/dashboard/state/state-commissioner/reports/overdue-directions" label="Overdue Directions" />
                             <SubNavItem link="/dashboard/state/state-commissioner/reports/employment-vacancy" label="Employment & Vacancy" />
                             <SubNavItem link="/dashboard/state/state-commissioner/reports/return-status-hub" label="Return Status Hub" />
-                            <SubNavItem link="/dashboard/state/state-commissioner/reports/accessibility-ledger" label="Accessibility Ledger" />
+                            <SubNavItem link="/dashboard/state/state-commissioner/reports/accessibility-ledger" label="Accessibility Compliance" />
                             <SubNavItem link="/dashboard/state/state-commissioner/reports/court-case-status" label="Court / Case Status" />
                             <SubNavItem link="/dashboard/state/state-commissioner/reports/annual-report-final" label="Annual Report Final" />
                             <SubNavItem link="/dashboard/state/state-commissioner/reports/special-issue-reports" label="Special Issue Reports" />
@@ -122,10 +124,10 @@ export function CommissionerSidebar() {
                 </Accordion>
 
                 {/* A5. SEARCH */}
-                <NavItem href="/dashboard/state/state-commissioner/search" icon={<Search size={18} />} label="Advanced Search" />
+                <NavItem href="/dashboard/state/state-commissioner/search" icon={<Search size={18} />} label="Quick & Advanced Search" />
 
                 {/* A6. GENERATIVE AI */}
-                <div className="mt-4 pt-4 border-t border-slate-100">
+                {/* <div className="mt-4 pt-4 border-t border-slate-100">
                     <p className="text-[8px] font-black text-indigo-400 uppercase tracking-[0.3em] ml-4 mb-2">Intelligence Layer</p>
                     <NavItem
                         href="/dashboard/state/state-commissioner/ai-drafting"
@@ -139,21 +141,23 @@ export function CommissionerSidebar() {
                         label="Narrative Builder"
                         color="text-purple-600"
                     />
-                </div>
+                </div> */}
 
                 {/* A8. COMMON */}
                 <div className="mt-4 pt-4 border-t border-slate-100">
-                    <NavItem href="/dashboard/state/state-commissioner/help" icon={<HelpCircle size={18} />} label="Help & Support" />
+                    <NavItem href="/dashboard/state/state-commissioner/contact" icon={<Phone size={18} />} label="Contact Us" />
+                    <NavItem href="/dashboard/state/state-commissioner/faq" icon={<HelpCircle size={18} />} label="FAQ" />
+                    <NavItem href="/dashboard/state/state-commissioner/help" icon={<Headphones size={18} />} label="Help & Support" />
                     <NavItem href="/dashboard/state/state-commissioner/settings" icon={<Settings size={18} />} label="Settings" />
                 </div>
             </nav>
 
             {/* LOG OUT */}
             <div className="p-4 border-t border-slate-100 bg-slate-50/50">
-                <button className="w-full flex items-center gap-3 p-4 rounded-xl text-slate-500 hover:text-red-600 hover:bg-red-50 transition-all font-black text-[11px] uppercase tracking-widest">
+                <Link href="/login" className="w-full flex items-center gap-3 p-4 rounded-xl text-slate-500 hover:text-red-600 hover:bg-red-50 transition-all font-black text-[11px] uppercase tracking-widest">
                     <LogOut size={18} />
                     Logout
-                </button>
+                </Link>
             </div>
         </div>
     );
