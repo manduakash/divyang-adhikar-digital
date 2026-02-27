@@ -1,4 +1,4 @@
-// components/dashboard/sdma/SDMA_Sidebar.tsx
+// components/dashboarddashboard/state/sdma/SDMA_Sidebar.tsx
 "use client";
 import React from 'react';
 import {
@@ -50,25 +50,11 @@ export function SDMASidebar() {
       {/* 2. STATUTORY NAVIGATION HUB */}
       <nav className="flex-1 px-4 pt-6 overflow-y-auto custom-scrollbar space-y-1 pb-10">
 
-        <NavItem href="/sdma/dashboard" icon={<LayoutDashboard size={18} />} label="Dashboard (Home)" active={pathname === '/sdma/dashboard'} />
+        <NavItem href="/dashboard/state/sdma" icon={<LayoutDashboard size={18} />} label="Dashboard" active={pathname === '/dashboard/state/sdma'} />
+
+        <NavItem href="/dashboard/state/sdma/profile" icon={<UserCircle size={18} />} label="Profile" active={pathname === '/dashboard/state/sdma/profile'} />
 
         <Accordion type="single" collapsible className="border-none w-full space-y-1">
-
-          {/* PROFILE SUBMENU */}
-          <AccordionItem value="profile" className="border-none">
-            <AccordionTrigger className="flex items-center justify-between p-3.5 rounded-xl text-slate-500 hover:bg-slate-50 hover:no-underline group">
-              <div className="flex items-center gap-3">
-                <UserCircle size={18} className="text-slate-400 group-hover:text-orange-600 transition-colors" />
-                <span className="text-[10px] font-black uppercase tracking-widest leading-none">Profile</span>
-              </div>
-            </AccordionTrigger>
-            <AccordionContent className="pl-10 space-y-1 pb-2">
-              <SubLink href="/sdma/profile/details" label="Authority / Secretariat Details" />
-              <SubLink href="/sdma/profile/roles" label="Role Mapping" />
-              <SubLink href="/sdma/profile/notifs" label="Notification Preferences" />
-              <SubLink href="/sdma/profile/esign" label="Digital Signature / eSign Setup" />
-            </AccordionContent>
-          </AccordionItem>
 
           {/* DATA ENTRY SUBMENU */}
           <AccordionItem value="data-entry" className="border-none">
@@ -79,13 +65,13 @@ export function SDMASidebar() {
               </div>
             </AccordionTrigger>
             <AccordionContent className="pl-10 space-y-1 pb-2">
-              <SubLink href="/sdma/data/directions" label="State-level Directions & Advisories" />
-              <SubLink href="/sdma/data/compliance" label="Responses & Compliance Tracking" />
-              <SubLink href="/sdma/data/review" label="District Preparedness Review Notes" />
-              <SubLink href="/sdma/data/coord" label="Inter-District Coordination Notes" />
-              <SubLink href="/sdma/data/warning" label="Early Warning Policy" />
-              <SubLink href="/sdma/data/resource" label="Resource Allocation" />
-              <SubLink href="/sdma/data/post-disaster" label="Post-Disaster Review" />
+              <SubLink href="/dashboard/state/sdma/data-entry/directions" label="State-level Directions & Advisories" />
+              <SubLink href="/dashboard/state/sdma/data-entry/compliance" label="Responses & Compliance Tracking" />
+              <SubLink href="/dashboard/state/sdma/data-entry/review" label="District Preparedness Review Notes" />
+              <SubLink href="/dashboard/state/sdma/data-entry/coord" label="Inter-District Coordination Notes" />
+              <SubLink href="/dashboard/state/sdma/data-entry/warning" label="Early Warning Policy" />
+              <SubLink href="/dashboard/state/sdma/data-entry/resource" label="Resource Allocation" />
+              <SubLink href="/dashboard/state/sdma/data-entry/post-disaster" label="Post-Disaster Review" />
             </AccordionContent>
           </AccordionItem>
 
@@ -98,9 +84,9 @@ export function SDMASidebar() {
               </div>
             </AccordionTrigger>
             <AccordionContent className="pl-10 space-y-1 pb-2">
-              <SubLink href="/sdma/fact/state" label="State Disaster–PwD Fact Sheet" />
-              <SubLink href="/sdma/fact/district" label="District Disaster–PwD Fact Sheet" />
-              <SubLink href="/sdma/fact/shelter" label="Shelter Fact Sheet" />
+              <SubLink href="/dashboard/state/sdma/fact-sheets/state" label="State Disaster–PwD Fact Sheet" />
+              <SubLink href="/dashboard/state/sdma/fact-sheets/district" label="District Disaster–PwD Fact Sheet" />
+              <SubLink href="/dashboard/state/sdma/fact-sheets/shelter" label="Shelter Fact Sheet" />
             </AccordionContent>
           </AccordionItem>
 
@@ -113,43 +99,44 @@ export function SDMASidebar() {
               </div>
             </AccordionTrigger>
             <AccordionContent className="pl-10 space-y-1 pb-2 font-sans">
-              <SubLink href="/sdma/rep/risk" label="State PwD Disaster Risk Summary" />
-              <SubLink href="/sdma/rep/dist" label="District-wise PwD Risk" />
-              <SubLink href="/sdma/rep/access" label="Shelter Accessibility Report" />
-              <SubLink href="/sdma/rep/evac" label="Transport Readiness Report" />
-              <SubLink href="/sdma/rep/med" label="Assistive Support & Medical" />
-              <SubLink href="/sdma/rep/warning" label="Early Warning Coverage (PwD)" />
-              <SubLink href="/sdma/rep/drills" label="Mock Drill Coverage Report" />
-              <SubLink href="/sdma/rep/post" label="Post-Disaster Response Evaluation" />
-              <SubLink href="/sdma/rep/compliance" label="Directions & Compliance Status" />
-              <SubLink href="/sdma/rep/annual" label="Annual Disaster Preparedness" />
+              <SubLink href="/dashboard/state/sdma/reports/risk" label="State PwD Disaster Risk Summary" />
+              <SubLink href="/dashboard/state/sdma/reports/district" label="District-wise PwD Risk" />
+              <SubLink href="/dashboard/state/sdma/reports/access" label="Shelter Accessibility Report" />
+              <SubLink href="/dashboard/state/sdma/reports/evac" label="Transport Readiness Report" />
+              <SubLink href="/dashboard/state/sdma/reports/med" label="Assistive Support & Medical" />
+              <SubLink href="/dashboard/state/sdma/reports/warning" label="Early Warning Coverage (PwD)" />
+              <SubLink href="/dashboard/state/sdma/reports/drills" label="Mock Drill Coverage Report" />
+              <SubLink href="/dashboard/state/sdma/reports/post" label="Post-Disaster Response Evaluation" />
+              <SubLink href="/dashboard/state/sdma/reports/compliance" label="Directions & Compliance Status" />
+              <SubLink href="/dashboard/state/sdma/reports/annual" label="Annual Disaster Preparedness" />
+              <SubLink href="/dashboard/state/sdma/reports/national-submission" label="NDMA / GoI Submission" />
             </AccordionContent>
           </AccordionItem>
         </Accordion>
 
-        <NavItem href="/sdma/search" icon={<Search size={18} />} label="Search" active={pathname === '/sdma/search'} />
+        <NavItem href="/dashboard/state/sdma/search" icon={<Search size={18} />} label="Search" active={pathname === '/dashboard/state/sdma/search'} />
 
         <div className="mt-6 pt-6 border-t border-slate-100">
           <p className="text-[9px] font-black text-orange-600 uppercase tracking-[0.3em] ml-4 mb-3">Intelligence Layer</p>
-          <NavItem href="/sdma/ai" icon={<Sparkles size={18} />} label="Generative AI Hub" color="text-purple-600" active={pathname === '/sdma/ai'} />
+          <NavItem href="/dashboard/state/sdma/ai" icon={<Sparkles size={18} />} label="Generative AI Hub" color="text-purple-600" active={pathname === '/dashboard/state/sdma/ai'} />
         </div>
 
         <div className="mt-4 pt-4 border-t border-slate-100">
-          <NavItem href="/sdma/contact" icon={<Megaphone size={18} />} label="Contact Us" />
-          <NavItem href="/sdma/faq" icon={<HelpCircle size={18} />} label="FAQ" />
-          <NavItem href="/sdma/settings" icon={<Settings size={18} />} label="Settings" />
+          <NavItem href="/dashboard/state/sdma/contact" icon={<Megaphone size={18} />} label="Contact Us" />
+          <NavItem href="/dashboard/state/sdma/faq" icon={<HelpCircle size={18} />} label="FAQ" />
+          <NavItem href="/dashboard/state/sdma/settings" icon={<Settings size={18} />} label="Settings" />
         </div>
       </nav>
 
       {/* 3. LOG OUT */}
       <div className="p-4 border-t border-slate-100 bg-slate-50/50">
-        <button className="w-full flex items-center justify-between p-4 rounded-2xl text-slate-500 hover:text-red-600 hover:bg-red-50 transition-all font-black text-[11px] uppercase tracking-widest group">
+        <Link href="/login" className="w-full flex items-center justify-between p-4 rounded-2xl text-slate-500 hover:text-red-600 hover:bg-red-50 transition-all font-black text-[11px] uppercase tracking-widest group">
           <div className="flex items-center gap-3">
             <LogOut size={18} className="group-hover:-translate-x-1 transition-transform" />
-            Log Out Control Node
+            Log Out
           </div>
           <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-        </button>
+        </Link>
       </div>
     </div>
   );

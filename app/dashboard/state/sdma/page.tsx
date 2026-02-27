@@ -196,7 +196,7 @@ export default function SDMADashboard() {
 function ChartContainer({ title, desc, children, cols }: any) {
     return (
         <Card className={`rounded-[44px] border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col ${cols}`}>
-            <CardHeader className="p-8 border-b border-slate-50 mb-6 bg-slate-50/30 relative overflow-hidden">
+            <CardHeader className="p-8 border-b border-slate-50 mb-6 bg-slate-50/50 relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
                 <div className="space-y-1 relative z-10">
                     <CardTitle className="text-[11px] font-black uppercase tracking-[0.25em] text-orange-600 leading-none">{title}</CardTitle>

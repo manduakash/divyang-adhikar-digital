@@ -40,9 +40,9 @@ export default function Login() {
         case 'state-commissioner': router.push('/dashboard/state/state-commissioner'); break;
         case 'state-advisory-board': router.push('/dashboard/state/state-advisory-board'); break;
         case 'sdma': router.push('/dashboard/state/sdma'); break;
-        case 'ccpd': router.push('/dashboard/state/ccpd'); break;
 
         // Central Authorities
+        case 'ccpd': router.push('/dashboard/central/ccpd'); break;
         case 'central': router.push('/dashboard/central'); break;
 
         // Admin
@@ -130,7 +130,6 @@ export default function Login() {
                     <RoleOption value="state-commissioner" label="State Commissioner Authority" icon={<Landmark size={16} />} />
                     <RoleOption value="state-advisory-board" label="State Advisory Board Authority" icon={<ShieldCheck size={16} />} />
                     <RoleOption value="sdma" label="State Disaster Management Authority" icon={<Siren size={16} />} />
-                    <RoleOption value="ccpd" label="Chief Commissioner of PwD" icon={<Landmark size={16} />} />
                   </SelectGroup>
 
                   <DropdownMenuSeparator className="my-2 opacity-50" />
@@ -139,6 +138,7 @@ export default function Login() {
                     <SelectLabel className="px-3 py-2 text-[9px] font-black text-emerald-600 uppercase tracking-[0.2em]">
                       Central Level Authorities
                     </SelectLabel>
+                    <RoleOption value="ccpd" label="Chief Commissioner of PwD" icon={<Landmark size={16} />} />
                     <RoleOption value="nadb" label="National Advisory Board Authority" icon={<ShieldCheck size={16} />} />
                     <RoleOption value="ndma" label="National Disaster Management Authority" icon={<Siren size={16} />} />
                     <RoleOption value="depwd" label="Ministry of Social Justice & Empowerment" icon={<ShieldCheck size={16} />} />
