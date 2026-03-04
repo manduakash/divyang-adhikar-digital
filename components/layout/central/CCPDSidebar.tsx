@@ -74,10 +74,10 @@ export function CCPDSidebar() {
                             </div>
                         </AccordionTrigger>
                         <AccordionContent className="pl-10 space-y-1 pb-2">
-                            <SubLink href="/dashboard/central/ccpd/fact/national" label="National Fact Sheet" />
-                            <SubLink href="/dashboard/central/ccpd/fact/state" label="State Fact Sheet" />
-                            <SubLink href="/dashboard/central/ccpd/fact/district" label="District Fact Sheet" />
-                            <SubLink href="/dashboard/central/ccpd/fact/entity" label="Establishment Fact Sheet" />
+                            <SubLink href="/dashboard/central/ccpd/fact-sheets/national" label="National Fact Sheet" />
+                            <SubLink href="/dashboard/central/ccpd/fact-sheets/state" label="State Fact Sheet" />
+                            <SubLink href="/dashboard/central/ccpd/fact-sheets/district" label="District Fact Sheet" />
+                            <SubLink href="/dashboard/central/ccpd/fact-sheets/entity" label="Establishment Fact Sheet" />
                         </AccordionContent>
                     </AccordionItem>
 
@@ -89,15 +89,15 @@ export function CCPDSidebar() {
                             </div>
                         </AccordionTrigger>
                         <AccordionContent className="pl-10 space-y-1 pb-2 font-sans">
-                            <SubLink href="/dashboard/central/ccpd/rep/national" label="National PwD Status Report" />
-                            <SubLink href="/dashboard/central/ccpd/rep/comparative" label="State-wise PwD Comparative Report" />
-                            <SubLink href="/dashboard/central/ccpd/rep/grievances" label="National Grievance Disposal Report" />
-                            <SubLink href="/dashboard/central/ccpd/rep/compliance" label="Directions Issued & Compliance Status" />
-                            <SubLink href="/dashboard/central/ccpd/rep/employment" label="PwD Employment & Vacancy Report" />
-                            <SubLink href="/dashboard/central/ccpd/rep/access" label="Accessibility Compliance Report" />
-                            <SubLink href="/dashboard/central/ccpd/rep/education" label="Education Inclusion Report" />
-                            <SubLink href="/dashboard/central/ccpd/rep/court" label="Court / Case Status Report" />
-                            <SubLink href="/dashboard/central/ccpd/rep/annual" label="Annual Report of the Chief Commissioner" />
+                            <SubLink href="/dashboard/central/ccpd/reports/national" label="National PwD Status Report" />
+                            <SubLink href="/dashboard/central/ccpd/reports/comparative" label="State-wise PwD Comparative Report" />
+                            <SubLink href="/dashboard/central/ccpd/reports/grievances" label="National Grievance Disposal Report" />
+                            <SubLink href="/dashboard/central/ccpd/reports/compliance" label="Directions Issued & Compliance Status" />
+                            <SubLink href="/dashboard/central/ccpd/reports/employment" label="PwD Employment & Vacancy Report" />
+                            <SubLink href="/dashboard/central/ccpd/reports/access" label="Accessibility Compliance Report" />
+                            <SubLink href="/dashboard/central/ccpd/reports/education" label="Education Inclusion Report" />
+                            <SubLink href="/dashboard/central/ccpd/reports/court" label="Court / Case Status Report" />
+                            <SubLink href="/dashboard/central/ccpd/reports/annual" label="Annual Report of the Chief Commissioner" />
                         </AccordionContent>
                     </AccordionItem>
                 </Accordion>

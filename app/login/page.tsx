@@ -43,7 +43,7 @@ export default function Login() {
 
         // Central Authorities
         case 'ccpd': router.push('/dashboard/central/ccpd'); break;
-        case 'central': router.push('/dashboard/central'); break;
+        case 'nabd': router.push('/dashboard/central/nabd'); break;
 
         // Admin
         case 'admin': router.push('/dashboard/admin'); break;
@@ -139,7 +139,7 @@ export default function Login() {
                       Central Level Authorities
                     </SelectLabel>
                     <RoleOption value="ccpd" label="Chief Commissioner of PwD" icon={<Landmark size={16} />} />
-                    <RoleOption value="nadb" label="National Advisory Board Authority" icon={<ShieldCheck size={16} />} />
+                    <RoleOption value="nabd" label="National Advisory Board Authority" icon={<ShieldCheck size={16} />} />
                     <RoleOption value="ndma" label="National Disaster Management Authority" icon={<Siren size={16} />} />
                     <RoleOption value="depwd" label="Ministry of Social Justice & Empowerment" icon={<ShieldCheck size={16} />} />
                   </SelectGroup>
