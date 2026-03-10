@@ -44,6 +44,7 @@ export default function Login() {
         // Central Authorities
         case 'ccpd': router.push('/dashboard/central/ccpd'); break;
         case 'nabd': router.push('/dashboard/central/nabd'); break;
+        case 'ndma': router.push('/dashboard/central/ndma'); break;
 
         // Admin
         case 'admin': router.push('/dashboard/admin'); break;

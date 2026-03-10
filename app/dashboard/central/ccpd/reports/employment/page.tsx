@@ -1,4 +1,4 @@
-// app/dashboard/daegs/reports/directions-compliance/page.tsx
+// app/dashboard/daegs/reports/national-employment/page.tsx
 "use client";
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,156 +8,132 @@ import {
 } from "@/components/ui/table";
 import {
     Globe, Printer, FileSpreadsheet, ArrowUpRight, 
-    Download, Search, Filter, BadgeCheck, 
-    History, Clock, AlertCircle, ShieldCheck, 
-    Scale, Gavel, Landmark, FileText
+    Download, Database, Search, Filter, 
+    BadgeCheck, History, Briefcase, Users, 
+    Target, ShieldCheck, Activity, Landmark,
+    ArrowRightLeft, Percent
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import {
-    Select, SelectContent, SelectItem, SelectTrigger, SelectValue
-} from "@/components/ui/select";
 
-export default function DirectionsComplianceReport() {
-    // Shared pattern constants
-    const radialPattern = "radial-gradient(rgba(0,0,0,0.05) 1.5px, transparent 0)";
-    const blueprintGrid = "linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)";
+export default function NationalEmploymentRegistry() {
+    // UI Aesthetic Constants
+    const gridPattern = "linear-gradient(#e2e8f0 1px, transparent 1px), linear-gradient(90deg, #e2e8f0 1px, transparent 1px)";
+    const dotPattern = "radial-gradient(rgba(0,0,0,0.08) 1.5px, transparent 0)";
 
     return (
-        <div className="space-y-12 animate-in fade-in duration-1000 pb-20 font-sans selection:bg-indigo-100 bg-[#f8fafc] relative min-h-screen overflow-hidden">
+        <div className="min-h-screen font-sans selection:bg-indigo-100 relative overflow-hidden pb-20">
             
-            {/* BACKGROUND BLUEPRINT PATTERN */}
-            <div className="absolute inset-0 z-0 opacity-[0.4] pointer-events-none" 
-                 style={{ backgroundImage: blueprintGrid, backgroundSize: '40px 40px' }} />
+            {/* BACKGROUND INFRASTRUCTURE (Blueprint Grid) */}
+            <div className="absolute inset-0 z-0 opacity-[0.3] pointer-events-none" 
+                 style={{ backgroundImage: gridPattern, backgroundSize: '48px 48px' }} />
 
-            <div className="relative z-10 space-y-12 px-8 pt-8">
+            <div className="relative z-10 p-8 space-y-10 max-w-[1600px] mx-auto">
 
-                {/* --- APEX HUB HEADER: MESH GRADIENT & RADIAL DOTS --- */}
-                <Card className="rounded-[48px] border-none bg-gradient-to-br from-white via-indigo-50/50 to-slate-100 shadow-2xl relative overflow-hidden ring-1 ring-slate-200">
-                    <div className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none" 
-                         style={{ backgroundImage: radialPattern, backgroundSize: '16px 16px' }} />
-                    
-                    <CardContent className="p-12 relative z-10 flex flex-col xl:flex-row justify-between items-center gap-12">
-                        <div className="space-y-6 flex-1 text-center xl:text-left">
-                            <div className="inline-flex items-center gap-3 bg-white/80 backdrop-blur-md text-indigo-700 px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.3em] border border-indigo-100 shadow-sm">
-                                <Gavel size={16} className="text-indigo-500" /> Statutory Command Node
+                {/* 1. APEX HUB HEADER: COMMAND & CONTROL */}
+                <Card className="rounded-[40px] border-none bg-white/70 backdrop-blur-xl shadow-2xl shadow-slate-200/60 relative overflow-hidden ring-1 ring-white">
+                    <CardContent className="p-12 flex flex-col lg:flex-row justify-between items-center gap-12">
+                        <div className="space-y-6 flex-1 text-center lg:text-left">
+                            <div className="inline-flex items-center gap-3 bg-indigo-950 text-indigo-100 px-5 py-2 rounded-full text-[9px] font-black uppercase tracking-[0.4em] shadow-lg">
+                                <Globe size={14} className="animate-spin-slow text-blue-400" /> National Statutory Node
                             </div>
-                            <h1 className="text-6xl font-black text-slate-900 tracking-tighter uppercase leading-[0.9]">
-                                Directions Issued <br /> <span className="text-indigo-600 italic">& Compliance Report</span>
+                            <h1 className="text-6xl font-[1000] text-slate-900 tracking-tighter uppercase leading-[0.9]">
+                                PwD Employment <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-indigo-600 to-indigo-900 italic">Statutory Ledger</span>
                             </h1>
-                            <p className="text-xl font-bold text-slate-400 italic uppercase tracking-tighter">
-                                National Audit Hub • Benchmarking Statutory Enforcement & State Accountability
+                            <p className="text-slate-400 font-bold uppercase tracking-widest text-[11px] flex items-center justify-center lg:justify-start gap-3">
+                                <Database size={14} className="text-indigo-600" /> Benchmarking National Quota Compliance (RPwD ACT 2016)
                             </p>
                         </div>
 
                         <div className="flex flex-col gap-4 min-w-[320px]">
-                            <Button className="h-16 px-10 rounded-[24px] bg-slate-950 text-white font-black uppercase tracking-widest text-[11px] shadow-2xl hover:bg-black transition-all group overflow-hidden relative">
+                            <Button className="h-16 px-10 rounded-2xl bg-slate-950 text-white font-black uppercase tracking-widest text-[11px] shadow-2xl hover:bg-black transition-all group overflow-hidden relative">
                                 <span className="relative z-10 flex items-center gap-3">
-                                    <Printer size={18} /> Print Executive Summary <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                    <Printer size={18} /> Print Audit Summary <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                 </span>
-                                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                                <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                             </Button>
                             <div className="flex gap-3">
-                                <Button variant="outline" className="flex-1 h-12 rounded-xl border-2 border-slate-200 font-black text-[10px] uppercase bg-white/60 backdrop-blur-md gap-2 shadow-sm hover:bg-white transition-all">
-                                    <FileSpreadsheet size={16} className="text-green-600" /> Export XLS
+                                <Button variant="outline" className="flex-1 h-12 rounded-xl border-2 border-slate-200 font-black text-[10px] uppercase bg-white/50 backdrop-blur-md gap-2 shadow-sm hover:bg-white transition-all text-slate-600">
+                                    <FileSpreadsheet size={16} className="text-green-600" /> XLS Export
                                 </Button>
-                                <Button variant="outline" className="flex-1 h-12 rounded-xl border-2 border-slate-200 font-black text-[10px] uppercase bg-white/60 backdrop-blur-md gap-2 shadow-sm hover:bg-white transition-all">
-                                    <Download size={16} className="text-blue-600" /> Export PDF
+                                <Button variant="outline" className="flex-1 h-12 rounded-xl border-2 border-slate-200 font-black text-[10px] uppercase bg-white/50 backdrop-blur-md gap-2 shadow-sm hover:bg-white transition-all text-slate-600">
+                                    <History size={16} className="text-blue-600" /> Log File
                                 </Button>
                             </div>
                         </div>
                     </CardContent>
                 </Card>
 
-                {/* --- KPI OVERVIEW GRID: GRADIENT ACCENTS --- */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                    <KPICard label="Total Directions" value="1,240" icon={<FileText />} gradient="from-blue-500/10 to-transparent" />
-                    <KPICard label="Verified Complied" value="982" icon={<ShieldCheck className="text-emerald-600" />} gradient="from-emerald-500/10 to-transparent" />
-                    <KPICard label="Pending Resolution" value="142" icon={<Clock className="text-orange-600" />} gradient="from-orange-500/10 to-transparent" />
-                    <KPICard label="Overdue Threshold" value="116" icon={<AlertCircle className="text-red-600" />} gradient="from-red-500/10 to-transparent" isCritical />
+                {/* 2. KPI ANALYTICS GRID: MESH GRADIENT CARDS */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <KPIMetric label="Total National Workforce" value="6.42M" icon={<Users />} color="from-blue-600 to-indigo-800" />
+                    <KPIMetric label="PwD Employees" value="264.8K" icon={<BadgeCheck />} color="from-emerald-500 to-teal-700" />
+                    <KPIMetric label="Compliance Index" value="4.12%" icon={<Activity />} color="from-indigo-600 to-blue-600" isPercent />
+                    <KPIMetric label="National Vacancies" value="14,240" icon={<Target />} color="from-orange-500 to-red-600" isAlert />
                 </div>
 
-                {/* --- DIRECTIONS REGISTRY: CARBON FIBER REGISTRY LAYOUT --- */}
-                <Card className="rounded-[52px] border-none shadow-2xl overflow-hidden bg-white ring-1 ring-slate-200 min-h-[800px]">
+                {/* 3. MAIN DATA REGISTRY: CARBON FIBER LEDGER */}
+                <Card className="rounded-[48px] border-none shadow-3xl overflow-hidden bg-white ring-1 ring-slate-200">
                     <CardHeader className="p-0">
-                        <div className="p-10 bg-gradient-to-br from-indigo-950 via-slate-900 to-indigo-900 text-white relative overflow-hidden">
-                            {/* CARBON FIBER OVERLAY */}
-                            <div className="absolute inset-0 opacity-30 pointer-events-none"
-                                style={{ backgroundImage: `radial-gradient(black 2px, transparent 0)`, backgroundSize: '4px 4px' }} />
-
+                        <div className="p-10 bg-gradient-to-br from-[#0f172a] via-[#1e1e3f] to-[#0f172a] text-white relative overflow-hidden">
+                            {/* CARBON FIBER DOT OVERLAY */}
+                            <div className="absolute inset-0 opacity-20 pointer-events-none"
+                                style={{ backgroundImage: dotPattern, backgroundSize: '12px 12px' }} />
+                            
                             <div className="flex flex-col md:flex-row justify-between items-center gap-10 relative z-10">
-                                <div className="flex items-center gap-5">
-                                    <div className="h-12 w-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-xl">
-                                        <Landmark size={24} className="text-blue-400" />
+                                <div className="flex items-center gap-6">
+                                    <div className="h-14 w-14 rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-inner">
+                                        <Landmark size={28} className="text-blue-400" />
                                     </div>
                                     <div className="space-y-1">
-                                        <CardTitle className="text-sm font-black uppercase tracking-[0.3em] leading-none italic uppercase">National Directions Ledger</CardTitle>
-                                        <p className="text-[10px] font-bold text-indigo-300 uppercase tracking-widest leading-none">Quasi-Judicial Mandate Tracking & Statutory Oversight</p>
+                                        <CardTitle className="text-sm font-black uppercase tracking-[0.4em] leading-none italic">Interstate Employment Ledger</CardTitle>
+                                        <p className="text-[10px] font-bold text-blue-300 uppercase tracking-widest leading-none opacity-80">Consolidated Registry of State-Wise Recruitment Sync</p>
                                     </div>
                                 </div>
-                                <div className="relative group flex-1 max-w-md">
-                                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-white/40" />
-                                    <input className="w-full pl-11 pr-6 py-4 bg-white/5 border-2 border-white/10 rounded-2xl text-[10px] font-black uppercase outline-none text-white placeholder:text-white/20 focus:bg-white/10 transition-all shadow-inner" placeholder="Search Reference or State Authority..." />
+                                <div className="relative group flex-1 max-w-lg">
+                                    <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-4 w-4 text-white/40" />
+                                    <input className="w-full pl-14 pr-8 py-5 bg-white/5 border border-white/10 rounded-3xl text-[11px] font-bold uppercase outline-none text-white placeholder:text-white/20 focus:bg-white/10 focus:ring-2 focus:ring-blue-500/50 transition-all shadow-2xl" placeholder="Filter by State Hub, UT Node, or Statutory ID..." />
                                 </div>
                             </div>
                         </div>
                     </CardHeader>
                     <CardContent className="p-0">
                         <Table>
-                            <TableHeader className="bg-slate-50/80 font-sans border-b-2 border-slate-100">
+                            <TableHeader className="bg-slate-50/80 border-b border-slate-100">
                                 <TableRow className="border-none">
-                                    <TableHead className="px-10 py-8 text-[9px] font-black uppercase tracking-widest text-slate-400">Direction Ref No.</TableHead>
-                                    <TableHead className="text-[9px] font-black uppercase tracking-widest text-slate-400">Issued To (State / Authority)</TableHead>
-                                    <TableHead className="text-[9px] font-black uppercase tracking-widest text-slate-400">Subject</TableHead>
-                                    <TableHead className="text-[9px] font-black uppercase tracking-widest text-slate-400 text-center">Date Issued</TableHead>
-                                    <TableHead className="text-[9px] font-black uppercase tracking-widest text-slate-400 text-center">SLA Due Date</TableHead>
-                                    <TableHead className="text-[9px] font-black uppercase tracking-widest text-slate-400 text-center">Status</TableHead>
-                                    <TableHead className="text-[9px] font-black uppercase tracking-widest text-center">Date of Comp.</TableHead>
-                                    <TableHead className="text-right px-10 text-[9px] font-black uppercase tracking-widest text-slate-400">Remarks</TableHead>
+                                    <TableHead className="px-12 py-8 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">State / Union Territory</TableHead>
+                                    <TableHead className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 text-center">Total Employees</TableHead>
+                                    <TableHead className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 text-center">PwD Count</TableHead>
+                                    <TableHead className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 text-center">Compliance Gauge</TableHead>
+                                    <TableHead className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 text-center">Identified</TableHead>
+                                    <TableHead className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 text-center">Filled</TableHead>
+                                    <TableHead className="text-right px-12 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Pending Actions</TableHead>
                                 </TableRow>
                             </TableHeader>
-                            <TableBody className="divide-y divide-slate-100 font-sans">
-                                <DirectionRow 
-                                    refNo="#DIR-2024-9182" state="Uttar Pradesh" authority="PWD Secretariat" 
-                                    subject="Accessibility Audit of District Hubs" issued="12 OCT 2024" 
-                                    due="27 OCT 2024" status="COMPLIED" compDate="25 OCT 2024" 
-                                    remarks="Fully Validated" success 
-                                />
-                                <DirectionRow 
-                                    refNo="#DIR-2024-7742" state="Maharashtra" authority="Social Welfare Dept" 
-                                    subject="Reservation Quota Backlog Clearance" issued="14 OCT 2024" 
-                                    due="29 OCT 2024" status="PENDING" compDate="---" 
-                                    remarks="Under Admin Review" warning 
-                                />
-                                <DirectionRow 
-                                    refNo="#DIR-2024-4410" state="West Bengal" authority="Labour Commissioner" 
-                                    subject="Special Court Infrastructure Sync" issued="02 OCT 2024" 
-                                    due="16 OCT 2024" status="OVERDUE" compDate="---" 
-                                    remarks="Show Cause Issued" alert 
-                                />
-                                <DirectionRow 
-                                    refNo="#DIR-2024-2109" state="Karnataka" authority="District Magistrate" 
-                                    subject="Legal Aid Outreach Mandate" issued="20 SEP 2024" 
-                                    due="05 OCT 2024" status="PARTIAL" compDate="---" 
-                                    remarks="Extension Requested" warning 
-                                />
+                            <TableBody className="divide-y divide-slate-100">
+                                <RegistryRow state="Uttar Pradesh" total="1.24M" pwd="51.2K" percent={4.12} identified="12,400" filled="11,200" pending="1,200" success />
+                                <RegistryRow state="Maharashtra" total="980K" pwd="38.5K" percent={3.92} identified="14,100" filled="12,800" pending="1,300" warning />
+                                <RegistryRow state="West Bengal" total="920K" pwd="37.4K" percent={4.08} identified="9,800" filled="9,100" pending="700" success />
+                                <RegistryRow state="Karnataka" total="850K" pwd="21.2K" percent={2.49} identified="15,400" filled="4,200" pending="11,200" alert />
+                                <RegistryRow state="Tamil Nadu" total="790K" pwd="32.8K" percent={4.15} identified="6,400" filled="6,100" pending="300" success />
                             </TableBody>
                         </Table>
                     </CardContent>
                 </Card>
 
-                {/* --- FOOTER SYNC STATUS --- */}
-                <footer className="pt-12 border-t-2 border-slate-200 flex flex-col md:flex-row justify-between items-center gap-8">
+                {/* 4. FOOTER SYNC STATUS */}
+                <footer className="pt-10 flex flex-col md:flex-row justify-between items-center gap-8 border-t border-slate-200/60">
                     <div className="flex items-center gap-4">
-                        <div className="h-12 w-12 rounded-full bg-white shadow-lg border border-slate-100 flex items-center justify-center">
-                            <BadgeCheck className="text-indigo-600" size={24} />
+                        <div className="h-10 w-10 rounded-xl bg-white shadow-lg border border-slate-100 flex items-center justify-center">
+                            <BadgeCheck className="text-indigo-600" size={22} />
                         </div>
-                        <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 leading-none">Statutory National Node v5.2 • LIVE COMPLIANCE SYNC ACTIVE</span>
+                        <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 leading-none">
+                            National Database Sync: <span className="text-emerald-600 font-black">Active</span> • 
+                            Framework v2.4 Verified Across 36 States
+                        </p>
                     </div>
-                    <div className="flex gap-4">
-                        <Button variant="outline" className="h-14 px-8 rounded-2xl border-2 border-slate-200 font-bold bg-white gap-2 text-[10px] uppercase tracking-widest hover:bg-slate-50 shadow-sm"><History size={18} /> Audit History</Button>
-                        <Button className="h-14 px-10 rounded-2xl bg-indigo-600 text-white font-black uppercase tracking-widest text-[10px] shadow-2xl gap-2 hover:bg-indigo-700 transition-all">
-                            <Printer size={18} /> Export Index
-                        </Button>
+                    <div className="flex gap-6">
+                        <button className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-indigo-600 transition-colors">Audit Integrity</button>
+                        <button className="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-indigo-600 transition-colors">Privacy Node</button>
                     </div>
                 </footer>
             </div>
@@ -167,61 +143,58 @@ export default function DirectionsComplianceReport() {
 
 /* UI SUB-COMPONENTS */
 
-function KPICard({ label, value, icon, gradient, isCritical }: any) {
+function KPIMetric({ label, value, icon, color, isAlert, isPercent }: any) {
     return (
-        <Card className="rounded-[36px] border-none bg-white p-1 shadow-xl shadow-slate-200/50 overflow-hidden group hover:-translate-y-1 transition-all relative ring-1 ring-slate-100">
-            <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-50`} />
+        <Card className="rounded-[36px] border-none bg-white p-1 shadow-xl shadow-slate-200/50 group hover:-translate-y-1 transition-all overflow-hidden relative ring-1 ring-slate-100">
+            <div className={`absolute inset-0 bg-gradient-to-br ${color} opacity-[0.03]`} />
             <div className="relative z-10 p-8 space-y-4">
-                <div className="h-12 w-12 rounded-2xl bg-white shadow-sm flex items-center justify-center border border-slate-50 group-hover:scale-110 transition-transform">
-                    {icon}
+                <div className="h-12 w-12 rounded-2xl bg-slate-50 shadow-inner flex items-center justify-center border border-slate-100 group-hover:scale-110 transition-transform">
+                    {React.cloneElement(icon, { size: 20, className: isAlert ? 'text-red-600' : 'text-indigo-600' })}
                 </div>
                 <div className="space-y-1">
-                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{label}</p>
-                    <p className={`text-4xl font-[1000] tracking-tighter ${isCritical ? 'text-red-600' : 'text-slate-900'}`}>{value}</p>
+                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">{label}</p>
+                    <p className={`text-4xl font-[1000] tracking-tighter ${isAlert ? 'text-red-600' : 'text-slate-900'}`}>{value}</p>
                 </div>
             </div>
-            {isCritical && <div className="absolute top-6 right-6 h-2 w-2 rounded-full bg-red-500 animate-ping" />}
+            {isAlert && <div className="absolute top-6 right-6 h-2 w-2 rounded-full bg-red-500 animate-ping" />}
         </Card>
     );
 }
 
-function DirectionRow({ refNo, state, authority, subject, issued, due, status, compDate, remarks, success, warning, alert }: any) {
-    const statusDot = success ? 'bg-green-500' : alert ? 'bg-red-500 animate-pulse' : warning ? 'bg-orange-500' : 'bg-blue-500';
-    
+function RegistryRow({ state, total, pwd, percent, identified, filled, pending, success, warning, alert }: any) {
+    const isUnderThreshold = percent < 4.0;
+    const statusColor = success ? 'bg-emerald-500' : alert ? 'bg-red-500 animate-pulse' : 'bg-orange-500';
+
     return (
         <TableRow className="border-none hover:bg-slate-50/50 transition-all group cursor-default">
-            <TableCell className="px-10 py-8 font-mono font-black text-indigo-700 text-xs tracking-tighter uppercase">{refNo}</TableCell>
+            <TableCell className="px-12 py-8">
+                <div className="flex items-center gap-5">
+                    <div className={`h-2.5 w-2.5 rounded-full ${statusColor} shadow-lg shadow-current/20`} />
+                    <span className="text-sm font-black text-slate-950 uppercase tracking-tight italic group-hover:translate-x-1 transition-transform">{state}</span>
+                </div>
+            </TableCell>
+            <TableCell className="text-center font-mono font-bold text-slate-400 text-xs uppercase tracking-tighter">{total}</TableCell>
+            <TableCell className="text-center font-mono font-black text-indigo-700 text-sm tracking-tighter">{pwd}</TableCell>
             <TableCell>
-                <div className="flex items-center gap-4">
-                    <div className={`h-1.5 w-1.5 rounded-sm shrink-0 ${statusDot}`} />
-                    <div className="flex flex-col">
-                        <span className="text-sm font-black text-slate-950 uppercase tracking-tight">{state}</span>
-                        <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest">{authority}</span>
+                <div className="flex flex-col items-center gap-2">
+                    <div className="w-32 h-1.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+                        <div 
+                            className={`h-full transition-all duration-1000 ${isUnderThreshold ? 'bg-gradient-to-r from-red-500 to-orange-400' : 'bg-gradient-to-r from-emerald-500 to-blue-500'}`} 
+                            style={{ width: `${Math.min((percent / 5) * 100, 100)}%` }} 
+                        />
                     </div>
+                    <span className={`text-[10px] font-mono font-black ${isUnderThreshold ? 'text-red-600 underline underline-offset-4 decoration-2' : 'text-emerald-600'}`}>{percent}%</span>
                 </div>
             </TableCell>
-            <TableCell className="max-w-[200px]">
-                <span className="text-[10px] font-bold text-slate-500 uppercase leading-snug">{subject}</span>
-            </TableCell>
-            <TableCell className="text-center font-mono font-bold text-slate-400 text-xs uppercase">{issued}</TableCell>
-            <TableCell className="text-center">
-                <div className="flex flex-col items-center">
-                    <span className={`text-xs font-mono font-black ${alert ? 'text-red-600 underline underline-offset-4 decoration-2' : 'text-slate-900'}`}>{due}</span>
-                    {alert && <p className="text-[7px] font-black text-red-400 mt-1 uppercase tracking-widest animate-pulse">SLA Breach</p>}
+            <TableCell className="text-center font-mono font-bold text-slate-500 text-xs">{identified}</TableCell>
+            <TableCell className="text-center font-mono font-black text-slate-900 text-xs">{filled}</TableCell>
+            <TableCell className="text-right px-12">
+                <div className="flex flex-col items-end">
+                    <span className={`text-sm font-mono font-black ${alert ? 'text-red-600' : 'text-slate-950'}`}>{pending}</span>
+                    <p className={`text-[7px] font-black uppercase tracking-widest mt-1 ${alert ? 'text-red-400' : 'text-slate-300'}`}>
+                        {alert ? 'CRITICAL DEFICIT' : 'SLA VALID'}
+                    </p>
                 </div>
-            </TableCell>
-            <TableCell className="text-center">
-                <Badge className={`border-2 font-black text-[8px] uppercase px-3 py-1 tracking-[0.2em] ${
-                    success ? 'bg-emerald-50 text-green-700 border-green-200' : 
-                    alert ? 'bg-red-50 text-red-700 border-red-200' : 
-                    'bg-indigo-50 text-indigo-700 border-indigo-200'
-                }`}>
-                    {status}
-                </Badge>
-            </TableCell>
-            <TableCell className="text-center font-mono font-black text-xs text-indigo-600">{compDate}</TableCell>
-            <TableCell className="text-right px-10">
-                <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest italic">{remarks}</span>
             </TableCell>
         </TableRow>
     );

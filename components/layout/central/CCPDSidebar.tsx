@@ -112,12 +112,12 @@ export function CCPDSidebar() {
 
             {/* EXIT INTERFACE */}
             <div className="p-4 border-t border-slate-100 bg-slate-50/50">
-                <button className="w-full flex items-center justify-between p-4 rounded-xl text-slate-500 hover:text-red-600 hover:bg-red-50 transition-all font-black text-[11px] uppercase tracking-widest group">
+                <Link href="/login" className="w-full flex items-center justify-between p-4 rounded-xl text-slate-500 hover:text-red-600 hover:bg-red-50 transition-all font-black text-[11px] uppercase tracking-widest group">
                     <div className="flex items-center gap-3">
                         <LogOut size={18} className="group-hover:-translate-x-1 transition-transform" />
-                        Terminate Session
+                        Login
                     </div>
-                </button>
+                </Link>
             </div>
         </div>
     );

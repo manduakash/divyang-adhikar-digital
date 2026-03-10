@@ -16,7 +16,7 @@ import { Badge } from "@/components/ui/badge";
 
 export default function DirectionsComplianceReport() {
     return (
-        <div className="space-y-12 animate-in fade-in duration-1000 pb-20 font-sans selection:bg-blue-100 bg-[#fbfcfd]">
+        <div className="space-y-12 animate-in fade-in duration-1000 pb-20 font-sans selection:bg-blue-100">
 
             {/* APEX HUB HEADER - STATUTORY AUTHORITY LEVEL */}
             <Card className="rounded-[48px] border-2 border-slate-100 bg-white shadow-2xl relative overflow-hidden">
