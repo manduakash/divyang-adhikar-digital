@@ -69,7 +69,7 @@ export default function NDMADashboardPage() {
                         onClick={() => router.push(item.route)}
                         className={`group relative text-left p-6 rounded-[32px] overflow-hidden transition-all duration-500 h-44 flex flex-col justify-between shadow-lg hover:shadow-2xl  bg-gradient-to-br ${item.color} text-white border-none`}
                     >
-                        <div className="absolute inset-0 opacity-90 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png')] bg-fixed" />
+                        <div className="absolute inset-0 opacity-90 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/diagonal-striped-brick.png')]" />
 
                         <div className="relative z-10 flex flex-col justify-between h-full">
                             <div className="h-10 w-10 rounded-2xl bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center shadow-inner group-hover:scale-110 transition-transform">
@@ -180,7 +180,7 @@ export default function NDMADashboardPage() {
             <Card className="rounded-[48px] border-none shadow-xl overflow-hidden bg-white">
                 <CardHeader className="p-0">
                     <div className="p-10 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 text-white relative overflow-hidden">
-                        <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] bg-fixed" />
+                        <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
 
                         <div className="flex flex-col md:flex-row justify-between items-center gap-10 relative z-10">
                             <div className="flex items-center gap-5">
@@ -253,7 +253,7 @@ function PerformanceSnapshot({ title, gradient, icon, data, isDanger }: any) {
     return (
         <Card className="rounded-[40px] border-none shadow-lg bg-white overflow-hidden flex flex-col h-full group hover:shadow-2xl transition-all duration-500">
             <div className={`p-6 flex items-center justify-between text-white relative overflow-hidden ${gradient}`}>
-                <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] bg-fixed" />
+                <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
                 <div className="flex items-center gap-4 relative z-10">
                     <div className="h-10 w-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center group-hover:scale-110 transition-transform shadow-inner">
                         {React.cloneElement(icon, { size: 18, className: "text-white drop-shadow-md" })}

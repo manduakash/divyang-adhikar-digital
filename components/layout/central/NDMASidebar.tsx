@@ -107,30 +107,17 @@ export function NDMASidebar() {
 
                 {/* SEARCH */}
                 <div className="pt-2">
-                    <NavItem href="/dashboard/central/ndma/search/quick" icon={<Search size={18} />} label="Quick Search" />
-                    <NavItem href="/dashboard/central/ndma/search/advanced" icon={<Database size={18} />} label="Advanced Search" />
+                    <NavItem href="/dashboard/central/ndma/search" icon={<Search size={18} />} label="Search" />
                 </div>
 
                 {/* GENERATIVE AI */}
                 <div className="mt-4 pt-4 border-t border-indigo-50">
                     <p className="text-[8px] font-black text-purple-500 uppercase tracking-[0.3em] ml-4 mb-2">Artificial Intelligence</p>
-                    <NavItem 
-                        href="/dashboard/central/ndma/ai/national-risk" 
-                        icon={<Sparkles size={18} />} 
-                        label="AI National Risk Summary" 
-                        color="text-purple-600" 
-                    />
-                    <NavItem 
-                        href="/dashboard/central/ndma/ai/state-preparedness" 
-                        icon={<Activity size={18} />} 
-                        label="AI State Preparedness Summary" 
-                        color="text-purple-600" 
-                    />
-                    <NavItem 
-                        href="/dashboard/central/ndma/ai/draft-advisories" 
-                        icon={<PenTool size={18} />} 
-                        label="AI Drafting of Advisories" 
-                        color="text-purple-600" 
+                    <NavItem
+                        href="/dashboard/central/ndma/ai"
+                        icon={<Sparkles size={18} />}
+                        label="AI Summary"
+                        color="text-purple-600"
                     />
                 </div>
 
